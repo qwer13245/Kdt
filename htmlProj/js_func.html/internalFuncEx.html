@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>internalFuncEx</title>
+</head>
+<body>
+    
+    <h1>internalFuncEx</h1>
+    <script>
+       
+       /*
+        1초간격으로 현재 시간을 출력하세요
+        -- 10초 간격으로 출력을 멈출 수 있도록 물어보세요
+        -- 출력이 멈추면 물어보는 것도 멈추세요
+        simpleDateFormat식을 활용하세요
+        var Date = new Date, 현재 날짜,시간을 나타내는 식이 필요함,
+        1초 간격으로 화면에 출력하는 함수(function)이 필요함
+        confirm으로 10초 간격으로 출력을 멈출건지 물어보고 conform으로 출력이 멈추면
+        물어보는것도 멈추세요, 시간이 갱신되야 함(현재시간이 1씩 늘어나야 함), 
+        10초 간격으로 출력을 멈출건지 물어보는 식(confirm, 초 간격),
+        출력이 멈추면 물어보는 식(prompt -> setInterval할건지),
+        Uncaught Syntex error : Unexpected Identifier 'Jan' 오류
+        setInterval, clearInterval, setTimeout
+        */
+
+        var date = new Date();
+        // var Year = new Year
+        // var Month = new Month
+        // var Week = new Week
+        var t = 0;
+        // t++
+        // var today
+        // function start(){
+        //     alert("start() 실행")
+        // }
+        // function bb(){
+        //     t++
+        //     document.write("bb()실행:"+t+"<br/>")
+        // }
+        // var bb = setInterval(today, 1000)
+        function today(){
+            t++
+            // let Year
+            // let Month
+            // let Week
+            document.write("today() 실행:"+Date+"<br/>")
+            // today(Date+1)
+        }
+        // document.write("today() 실행"+Date+t+"<br/>")
+        console.log(today)
+        prompt(today, 1000)
+        var aa = setInterval(today, 1000)
+        // prompt(aastop,10000)
+        
+        function aastop(){
+            clearInterval(aa)
+            document.write("aastop() 실행 <br/>")
+            // if (today>10) {
+            //     prompt(aastop)
+            // }
+        }
+        console.log(aastop)
+        // alert(aastop,10000)
+        setTimeout(aastop,10000)
+        // confirm(aastop, aa)
+        // confirm(aastop,10000)
+        
+        
+    
+        
+    </script>
+</body>
+</html>

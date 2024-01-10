@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>board</title>
+    <style>
+        #con{
+            width:800px;
+            border: 1px solid #000;
+        }
+
+        #con > div{
+            width:700px;
+            height: 30px;
+            margin: 5px;
+            
+            clear: both;
+        }
+
+        #con > div > div{
+            width:500px;
+            height: 30px;
+            padding-left: 20px;
+            line-height: 30px;
+            border: 1px solid #888;
+            float: left;
+        }
+
+        #con > div > button{
+            display: block;
+            float: right;
+            margin-right: 20px;
+        }
+        /* #con > div > button{
+            display: block;
+            float: right;
+            margin: 20px;
+        } */
+        /* #con > button{
+            display: block;
+            float: right;
+            margin: 20px;
+        } */
+    </style>
+    <script>
+        //수정 버튼을 만들고 o
+        //수정을 누르면 내용을 수정할 수 있게 해주세요
+        //수정이 완료되면 수정완료 버튼으로 바뀌게 해주시고,
+        //수정 후에는 수정이 안되게끔 해주세요
+        //인풋태그를 사용하세요
+        window.onload = function(){
+            var con = document.getElementById("con")
+            var ttt = document.getElementById("ttt")
+            var btn = document.getElementById("btn")
+            var aaa = document.getElementById("aaa")
+            // var bbb = document.getElementById("bbb")
+
+            btn.onclick = function(){
+                var vv = ttt.value
+                ttt.value = ""
+            
+                var box = document.createElement("div")
+
+                var content = document.createElement("div")
+                content.innerHTML = vv
+                box.appendChild(content)
+
+                var delBtn = document.createElement("button")
+                delBtn.innerHTML = "삭제"
+                delBtn.onclick = function(){
+                    //box.remove()
+                    this.parentNode.remove() //둘다 상관없음
+                }
+                // var aaa = aaa.value
+                // aaa.value = ""
+                // var bbb = document.append("div")
+
+                // var bb = aaa.value
+                // aaa.value=""
+                //집에서 다시한번 풀어보기
+                //div면 힘듦 수정버튼 누르면 텍스트 내용이 수정되야 하고
+                //수정 누르면 수정할 수 있는 칸이 생성되야 함
+                //수정완료 버튼 누르면 수정내용이 박스안에 적용되야 함 
+                // var aaa = document.createElement("button")
+                var aaa = document.createElement("button")
+                aaa.innerHTML = "수정"
+                aaa.onclick = function(){
+                // this.aaa.appendChild(content)
+                // box.append(content)
+                // this.parentNode.append()
+                // box.append(content)
+                // this.parentNode.content()
+                // aaa.appendChild(content)
+                // box.appendChild(content)
+                // box.append(aaa)
+                // box.appendChild(aaa)
+                // aaa.append(content)
+                // aaa.appendChild(content)
+                // this.parentNode.box()
+                // aaa.append(content)
+                // aaa.appendChild(vv)
+                // this.parentNode.remove()
+                // bbb.append(content)
+
+                // var bbb = document.getElementById("div")
+                // bbb.append(content)
+                // bbb.onclick = function(){
+                //     // bbb.append(content)
+                //     // this.content.append()
+                //     this.parentNode.appendChild(content)
+                // }
+                // var bbb = document.createElement("input")
+                // aaa.append(content)
+                // box.append(content)
+                // aaa.document.getElementById("input")
+                // aaa.append("text")
+                // aaa.append(content)
+                }
+                // var bbb = aaa.value
+                // aaa.value=""
+
+                
+                
+                // bbb.innerHTML = "내용수정"
+                // bbb.onclick = function(){
+                //     bbb.append(content)
+                // }
+                // var bbb = document.createElement("input")
+                // bbb.innerHTML = "내용수정"
+                // bbb.onclick
+                box.append(aaa)
+                // box.appendChild(aaa)
+
+                // aaa.append(content)
+
+                box.appendChild(delBtn)
+
+                con.appendChild(box)
+
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>board</h1>
+    <input type="text" id="ttt"/>
+    <input type="button" id="btn" value="추가"/>
+    <input type="button" id="aaa" value="수정"/>
+    <input type="text" id="bbb" value="내용수정"/>
+    <div id="con"/>
+</body>
+</html>

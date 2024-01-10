@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teacher_jumin</title>
+</head>
+<body>
+    <h1>teacher_jumin</h1>
+    <script>
+        /// 주민번호 - 생년월일, 성별, 국적
+
+        var jumin = "960320-8234567"
+        var pp = eval(jumin[7])
+        document.write("여남"[pp%2]+"자<br/>")
+        document.write("내외"[parseInt(pp/5)]+"국인<br/>")
+        var title = "년월일"
+        var birth = ""+Math.floor( (pp-1) %4 /2 +19)
+        for (var i in title) {
+            birth += jumin.substr(i*2,2)+title[i]
+        }
+        document.write(birth+"<br/>")
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+<body>
+    <h1>table</h1>
+    <table border="1" bgcolor="#ff0">
+        내용을 쓴다 꺼져
+        <tr bgcolor="#0f0">
+            여기에도 쓴다 꺼져
+            <!-- 내용은 td 안에만 써야 함 , 이미지, 링크 등등등
+                스타일은 td > tr > table 순
+            -->
+            <td>1_1</td>
+            <td> <img src="../fff/child_1.jpg" width="20px" alt="">1_2</td>
+            <td bgcolor="#0ff" width="40px">1_3</td>
+        </tr>
+        <tr>
+            <td height="40px">2_1</td>
+            <td height="60px">2_2</td>
+            <!-- height, width 가장 큰값을 기준으로 함-->
+            <td  height="30px" width="60px">2_3</td>
+        </tr>
+        <tr>
+            <td rowspan="2">3_1</td>
+            <td colspan="2">3_2</td>
+            
+        </tr>
+        <tr>
+            <td>4_2</td>
+            <td width="20px">4_3</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                    <table border="1" width="100%">
+                        <tr>
+                            <td>new_1</td>
+                            <td>new_2</td>
+                        </tr>
+                    </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

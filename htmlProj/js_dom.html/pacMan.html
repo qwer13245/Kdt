@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pacMan</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 1px solid #888;
+            margin: auto;
+        }
+        .enermy{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #0f0;
+            
+        }
+        .enermy1{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #0f0;
+            
+        }
+        .enermy2{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #0f0;
+            
+        }
+        .enermy3{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #0f0;
+            
+        }
+        .enermy4{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #0f0;
+            
+        }
+        #me{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #fa0;
+        }
+        
+    </style>
+    <script>
+        //게임을 만들어오세요(가급적 똑같은 게임을 만들지 마세요)
+        //팩맨 적을 다섯개 만들어오세요. 똑같이 움직이게 하지말고 랜덤으로 퍼지게끔 하세요
+        // 2,3,4에서 움직인다면 x=1, y=3 이라면, 표준편차를 이용해서 표준편차가 2정도 되면 분산하게끔하세요
+        window.onload=function(){
+
+            playChk = true
+
+            me = document.getElementById("me")
+            me.xx = 300
+            me.yy = 200
+            me.style.left = me.xx+"px"
+            me.style.top = me.yy+"px"
+
+            enermy = document.getElementsByClassName("enermy")[0]
+            enermy.xx = 100
+            enermy.yy = 100
+            enermy.xDir = 3
+            enermy.yDir = 3
+            enermy.style.left = enermy.xx+"px"
+            enermy.style.top = enermy.yy+"px"
+
+            // enermy = document.getElementsByClassName("enermy1")[1]
+            // enermy1.xx = 200
+            // enermy1.yy = 200
+            // enermy1.xDir = 2
+            // enermy1.yDir = 2
+            // enermy1.style.left = enermy1.xx+"px"
+            // enermy1.style.top = enermy1.yy+"px"
+
+            // enermy = document.getElementsByClassName("enermy2")[2]
+            // enermy2.xx = 300
+            // enermy2.yy = 300
+            // enermy2.xDir = 4
+            // enermy2.yDir = 4
+
+            // enermy = document.getElementsByClassName("enermy3")[3]
+            // enermy3.xx = 400
+            // enermy3.xx = 400
+            // enermy3.xDir = 1
+            // enermy3.yDir = 1
+            // enermy3.style.left = enermy3.xx+"px"
+            // enermy3.style.left = enermy3.yy+"px"
+
+            // enermy = document.getElementsByClassName("enermy4")[4]
+
+
+            function enermyMove(){
+
+                if(enermy.xx>600-50 || enermy.xx < 0){ enermy.xDir *= -1}
+                if(enermy.yy>400-50 || enermy.yy < 0){ enermy.yDir *= -1}
+
+                enermy.xx += enermy.xDir
+                enermy.yy += enermy.yDir
+
+                enermy.style.left = enermy.xx+"px"
+                enermy.style.top = enermy.yy+"px"
+
+                touch()
+            }
+            //enermyMove()
+
+            gogo = setInterval(enermyMove, 20)
+
+        }
+        window.onkeydown=function(e){
+            //console.log("나야:"+e.keyCode)
+            switch(e.keyCode){
+                case 38: //위
+                me.yy -= 5
+                break
+                case 40: //아래
+                me.yy += 5
+                break
+                case 37: //좌
+                me.xx -= 5
+                break
+                case 39: //우
+                me.xx += 5
+                break
+            }
+
+            if(me.xx<0){ me.xx = 0}
+            if(me.xx>600-50){ me.xx = 600-50}
+            if(me.yy<0){ me.yy = 0}
+            if(me.yy>400-50){ me.yy = 400-50}
+
+            if(playChk){
+                me.style.left = me.xx+"px"
+                me.style.top = me.yy+"px"
+            }
+
+            //touch()
+
+        }
+
+        function touch(){
+            if( me.xx < enermy.xx+50 &&
+                me.xx+50 > enermy.xx    && 
+                me.yy < enermy.yy+50 &&
+                me.yy+50 > enermy.yy
+            ){
+                console.log("touch:")
+
+                playChk = false
+                clearInterval(gogo)
+                alert("게임오버")
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>pacMan</h1>
+    <section>
+        <div class="enermy"></div>
+        <!-- <div class="enermy1"></div>
+        <div class="enermy2"></div>
+        <div class="enermy3"></div>
+        <div class="enermy4"></div> -->
+        <div id="me"></div>
+    </section>
+</body>
+</html>

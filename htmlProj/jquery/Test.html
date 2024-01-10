@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 성적 계산</title>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <style>
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <label for="score1">국어:</label>
+    <input type="text" id="s`core1" class="score">
+</div>
+
+<div>
+    <label for="score2">영어:</label>
+    <input type="text" id="score2" class="score">
+</div>
+
+<div>
+    <label for="score3">수학:</label>
+    <input type="text" id="score3" class="score">
+</div>
+
+<button id="calculate">계산하기</button>
+
+<div id="result">
+    <h3>결과:</h3>
+    <p>총점: <span id="tot"></span></p>
+    <p>평균: <span id="average"></span></p>
+    <p>등급: <span id="grade"></span></p>
+    <p>등수: <span id="rank"></span></p>
+</div>
+
+<script>
+    //과제 : 학생 성적의 총점, 평균, 등급, 순위를 계산하기 버튼을 누르면 
+    //       자동으로 계산이 되도록 구현하세요
+
+    $(document).ready(function () {
+        $("#calculate").click(function () {
+            // 각 과목의 점수를 가져와서 숫자로 변환
+            var scores = $(".score").map(function () {
+                return parseFloat($(this).val()) || 0;
+            }).get();
+
+            // 총점 계산
+            var tot = scores.reduce(function (acc, val) {
+                return acc + val;
+            }, 0);
+
+            // 평균 계산
+            var average = tot / scores.length;
+
+            // 등급 계산
+            var grade = "";
+            if (average >= 90) {
+                grade = "수";
+            } else if (average >= 80) {
+                grade = "우";
+            } else if (average >= 70) {
+                grade = "미";
+            } else if (averafe >= 60) {
+                grade = "양";
+            } else{
+                grade = "가";
+            }
+
+            // 등수 계산
+            var rank = 1;
+            scores.forEach(function (score) {
+                if (score > tot) {
+                    rank++;
+                }
+            });
+
+            // 결과를 화면에 출력
+            $("#tot").text(tot);
+            $("#average").text(average.toFixed(2));
+            $("#grade").text(grade);
+            $("#rank").text(rank);
+        });
+    });
+</script>
+
+</body>
+</html>

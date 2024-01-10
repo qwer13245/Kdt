@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while</title>
+</head>
+<body>
+    <!-- <script>
+    // parseInt : 메소드
+        var aa = prompt("2의 배수의 합");
+        var bb = prompt("3의 배수의 곱");
+        while(true){
+        
+        if (aa%2==0) {
+            console.log(aa*2);
+            break;
+        }else{
+            console.log(bb*3);
+            break;
+        }
+    } 
+    </script> -->
+    <script>
+        var two = 0 , three = 1;
+        while(1){
+            var vv = prompt("숫자입력 (x : 종료)");
+            if(vv=="x"){
+                break;
+            }
+            document.write(vv+"<br/>");
+            var no = parseInt(vv)
+            if(no%2==0){
+                two += no
+            }
+            if(no%3==0){
+                three *= no
+            }
+        }
+
+        document.write("2의 배수 :"+ two);
+        document.write("3의 배수 :"+ three);
+    </script>
+</body>
+</html>

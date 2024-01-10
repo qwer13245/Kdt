@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+    /*
+            4과목 - 평균 : 비균등  20%,15%, 5%, 60%
+            
+            등급, 등수(구분별)
+    
+              /* 
+            3과목 - 평균 : 균등
+            4과목 - 평균 : 비균등  20%,15%, 5%, 60%
+            평균점수에 해당하는 등급을 넣을려면 studs 점수의 평균을 구분짓는게 필요함
+            등수(구분별)를 구현할려면     
+            등급, 등수(구분별)
+    
+            */
+           
+            var cnt = 0;
+            for (let i = 0; i < studs.length; i++) {
+                studs[i] += avg;
+            }
+            for (var rank in studs) {
+                switch(rank){
+                    case 90:
+                        rank+="수"
+                        break;
+                    case 80:
+                        rank+="우"
+                        break;
+                    case 70:
+                        rank+="미"
+                        break;
+                    case 60:
+                        rank+="양"
+                        break;
+                    case 50:
+                        rank+="가"
+                        break;
+                }
+            }
+            </script>
+            
+            <table border="">
+            <tr>
+                <td>구분</td>
+                <td>이름</td>
+                <td>국어</td>
+                <td>영어</td>
+                <td>수학</td>
+                <td>예체능</td>
+                <td>총점</td>
+                <td>평균</td>
+                <td>등급</td>
+                <td>등수</td>
+            </tr>
+            <script>
+                for (var st of studs) {
+                    var ttt = "<tr>"
+                    ttt += "<td></td>"
+                    ttt += "</tr>"
+                    document.write(ttt)
+                }
+        </script>
+ </body>
+ </html>

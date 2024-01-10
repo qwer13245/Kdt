@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+
+        section{
+            width: 900px;
+            height: 600px;
+            background: url(../fff/다운로드\ \(1\).jfif);
+            margin: auto;
+        }
+
+        section > div{
+            width: 90px;
+            height: 100px;
+            background-color: #ff0;
+            float: left;
+        }
+    </style>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <script>
+        //씨줄, 날줄 - row, colum
+        //내가 선택한 이미지가 행인지 열인지 어떻게 아나요?
+        //인덱스 값 eq()으로 해결하세요.
+        //모서리의 기준: 가장 위에쪽, 아래쪽, 왼쪽, 오른쪽
+        //0~9: 맨 위, 50번대 : 가장 아래, 0,10,20,30,40 : 왼쪽, 9,19,29,39,49..:오른쪽
+        //Switch에 다 넣어서 해보세요
+
+        //과제 : jquery를 이용하여 국어,영어,수학 총점, 평균, 등급, 순위를 구하세요
+        $(function(){
+            for (let i = 0; i < 60; i++) {
+                $("section").append("<div></div>")
+            }
+
+            $("section > div").mouseover(function(){
+                //console.log($(this).html())
+                $(this).css({
+                    opacity:"0"
+                })
+            })
+            // $("section > div").eq(i).css({
+            //     $(this).css({
+            //         opacity : "0.5"
+            //     })
+            // })
+            
+            // if("section > div"==0){
+            //     opacity = true
+            // }else{
+            //     opacity = false
+            // }
+            // $("section > div").eq(i).css({
+
+            // })
+            // $("section > div").mouseover(function(){
+            //     $(this).css({
+            //         opacity : "0.5"
+            //     })
+            // })
+            // $("section > div").eq(0).mouseover(function(){
+            //     if("section > div">0){
+            //         $(this).css({
+            //             opacity:"0.5"
+            //         })
+            //     }
+            //     })
+            // $(function(){
+            //     for (let j = 0; j < 10; j++) {
+            //         $("section > div").mousedown(function(){
+            //             $(this).css({
+                            
+            //                 opacity:0.5
+            //             })
+            //         })
+            //     }
+            // })
+            // $("section > div::last-of-type(1)").mouseover(function(){
+            //     $(this).css({
+            //         opacity:0.2
+            //     })
+            // })
+            // $("section > div > div").mouseover(function(){
+            //     $(this).css({
+            //         opacity: "0.5"
+            //     })
+            // })
+            // $("section > div > div").mouseover(function(){
+            //     $(this).css({
+            //         opacity: "0.2"
+            //     })
+            // })
+            // $("section > div > div").mouseover(function(){
+            //     $(this).css({
+            //         opacity:"0.1"
+            //     })
+            // })
+
+            $("section > div").mouseout(function(){
+                //console.log($(this).html())
+                $(this).css({
+                    opacity:"1"
+                })
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+    <h1>car</h1>
+    <section></section>
+</body>
+</html>

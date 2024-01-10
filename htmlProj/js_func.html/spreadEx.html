@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spreadEx</title>
+</head>
+<body>
+    <h1>spreadEx</h1>
+    <script>
+        var I = 3.14
+        shape(7)
+        function shape(...arr){
+            if (arr.length==1) {
+                console.log(arr)
+                document.write("<br>"+arr+ "*"+ I + arr+"<br/>")
+                document.write("<br>"+arr+"*"+arr+"*"+I+"<br/>")
+            } 
+            
+
+            if(arr.length==2){
+                document.write("<br>"+arr+arr+arr+"*"+2+"<br/>")
+                document.write("<br>"+arr+"*"+arr+"<br/>")
+            }
+
+            if(arr.length==3){
+                document.write("<br>"+arr+"*"+arr+"%"+2+"<br/>")
+                document.write("<br>"+arr+arr+"*"+2+"<br/>")
+            }else{
+                document.write("<br>"+"도형이 아니무니다"+"<br/>")
+            }
+        }
+    </script>
+</body>
+</html>

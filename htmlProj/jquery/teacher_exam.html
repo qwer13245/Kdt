@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+
+        section{
+            width: 700px;
+            height: 600px;
+            border: 1px solid #aaa;
+        }
+        #reg > input,  .student > input{
+            width: 50px;
+          
+        }
+
+        section > .student{
+            width: 600px;
+            height: 30px;
+            background-color: #ffa;
+            margin: 10px;
+            padding:10px;
+        }
+    </style>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <script>
+        //등급, 등수를 수정해주세요
+        //등수를 수정할려면 전체를 수정해줘야 함
+        //1명의 등수를 구할 때마다 - 출력부를 다 받아야 하고 가져올때마다
+        //점수를 비교해야 함, calc를 돌릴때마다 출력부를 받아와야 함
+        //계산된거를 arr [] 에 다 계산하고 난 다음 수정작업을 해야 함
+        //기존에 있던 애들꺼를 수정해야 함 rank값이 들어가니까 - rank값이 변경되야 함
+        //editrank값을 변경해야 함, value값을 뽑아오면 됨, 멤버변수, pname을 따로 뽑아야할
+        //이유가 있나요? 굳이 뽑아낼 필요 없음, editname이 있기 때문에, editname에 집어넣었
+        //으니까, 형변환, value가 들어가면 됨, no만 필요함, rank를 누를때마다 reset되야 함
+        //출력부에 따로 안만들어야 함, 수정해서 쓸 수 있도록 어떻게 하는지 아시나요?
+        //for문
+        //값을 입력하고 출력하려면 어느 부분에 함수를 만들어야 하나요?
+        var no  = 0
+        var arr = {}
+
+        //입력부
+        function stInit(){
+            var st = {
+                    no : no,
+                    pname : $("#reg > #pname").val(),
+                    jum : [],
+                }
+                $("#reg > #pname").val("정성"+(no+1))
+                for (let i = 0; i < 3; i++) {
+                    st.jum.push(eval($("#reg > .jum").eq(i).val()))
+
+
+                    $("#reg > .jum").eq(i).val(Math.floor(Math.random()*50+50) )
+                }
+                return st
+        }
+
+        //연산부 - 연산 
+        //grade를 계산한 값을 st에 추가해줘야 함
+        //프로젝트 진행 시 - 프로그래머 담당부분 - 퍼블리셔 담당부분으로 나눠서
+        //작업해보기
+        //edit변수 - 변수
+        function calc(st){
+            st.tot = 0
+                for (const j of st.jum) {
+                    st.tot += j
+                }
+                st.avg = parseInt(st.tot/st.jum.length) 
+        }
+        var grade = ""
+        var avg = 0;
+        var st = ""
+
+        if(avg>90){
+            st.grade = "수"
+        }else if(avg>80){
+            st.grade = "우"
+        }else if(avg>70){
+            st.grade = "미"
+        }else if(avg>60){
+            st.grade = "양"
+        }else{
+            st.grade = "가"
+        }
+        console.log(grade);
+
+        var rank = 1;
+            var no = 0;
+            
+            for (const k in rank) {
+                if (me.rank > you.rank) {
+                    rank++;
+                }
+            }
+        
+        
+        // function calc(st){
+        //     st.grade = 0;
+        //     for (const g of st.grade) {
+        //         st.grade += g
+        //     }
+        //     st.grade 
+        // }
+
+        //출력부 - 출력이 되도록
+        function stHtml(st){
+
+            st.editJum = []
+            st.editName = $('<input type="text" class="pname" />')
+            st.editName.val(st.pname)
+            st.editName.prop("readonly",true) //javascript의 property
+            st.editTot = $('<input type="text" class="pname" value="'+st.tot+'"/>')
+            //st.editTot.attr("readonly",true) //html 의 속성 적용 안됌
+            st.editAvg = $('<input type="text" class="pname" value="'+st.avg+'"  readonly/>')
+            st.htmlTAG.append(st.editName)
+            
+            st.editgrade = []
+            st.htmlTAG = $("<div class = student></div>")
+            st.htmlTAG = $('<input type="text" class = "grade"/>')
+            st.editgrade = $('<input type="text" calss="grade" value="'+st.grade+'"/>')
+            st.editgrade.val(st.grade)
+            st.editgrade.prop("readonly",true)
+            st.htmlTAG.append(st.editgrade)
+
+            st.editrank = []
+            st.htmlTAG = $("<div class= rank></div>")
+            st.htmlTAG = $('<input type="text" class="rank" value="'+st.rank+'"/>')
+            st.editrank.val(st.rank)
+            st.editrank.prop("readonly")
+
+            for (const j of st.jum) {
+                var ej = $('<input type="text" class="jum" />')
+                ej.prop("readonly",true) 
+                ej.val(j)
+                st.editJum.push(ej)
+                st.htmlTAG.append(ej)
+            }
+            st.htmlTAG.append(st.editTot)
+            st.htmlTAG.append(st.editAvg)
+            st.htmlTAG.append('<input type="text" class="grade" value="'+st.grade+'"/>')
+            st.htmlTAG.append('<input type="text" class="rank" value="'+st.rank+'"/>')
+            // st.htmlTAG.append(st.editgrade)
+            // st.htmlTAG.append(st.editrank)
+            
+            // st.editgrade = [];
+            // st.editgrade = $('<input type="text" class="grade" value="'+st.pname+'"/>')
+            // st.editgrade.val(st.grade)
+            // st.editgrade.prop("readonly",true)
+
+            // st.editrank = [];
+            // st.editrank = $('<input type="text class="rank" value="'+st.rank+'"/>"')
+            // st.editrank.val(st.rank)
+            // st.editrank.prop("readonly",true)
+            
+            //학생들의 총점, 평균, 등급, 등수를 다 담고있는 애 = arr 배열
+            //object 추가하는 방법
+            //출력부 - 함수 출력하는 방법대로 구현해보세요
+            //grade를 구하는 함수도 있어야 함
+            //rank를 구하는 함수가 있어야 함
+            //기준값을 찾아야 함
+            // var grade = "";
+            // var avg = 0;
+            // if(avg>=90){
+            //     st.grade="수";
+            // }else if(avg>=80){
+            //     st.grade="우";
+            // }else if(avg>=70){
+            //     st.rade="미";
+            // }else if(avg>=60){
+            //     st.grade="양";
+            // }else{
+            //     st.grade="가";
+            // }
+            // for (let  g = 0; g < arr.length;  g++) {
+            
+            }
+            // function grade(st){
+            //     st.htmlTAG = $("<div class = grade></div>")
+            //     st.editgrade = [];
+            //     st.editgrade.val(st.grade)
+            //     st.editgrade.prop("readonly",true)
+            //     // st.htmlTAG.append(st.editgrade)
+            // }
+            // console.log(grade)
+            // st.editgrade = [];
+            // st.editgrade = $('<input type="text" class="grade" value="'+st.pname+'"/>')
+            // st.editgrade.val(st.grade)
+            // st.editgrade.prop("readonly",true)
+            // function rank(st){
+            //     st.htmlTAG  = $("<div class = rank></div>")
+            //     st.editrank = [];
+            //     st.editrank.val(st.rank)
+            //     st.editrank.prop("readonly",true)
+            //     st.editrank = $('<input type = "text" class = rank value="'+st.rank+'"/>')
+            // }
+            // console.log(rank)
+            // var rank = 1;
+            // var no = 0;
+            // //반 전체의 값을 담고있는 애 - st / arr
+            // for (const k in rank) {
+            //     if (me.rank > you.rank) {
+            //         rank++;
+            //     }
+            // }
+
+            // modifyrank.on("click",function(){
+            // })
+            // var rank = 1;
+            // for (const k in rank) {
+            //     if () {
+            //     }
+            // }
+            // for (const k of rank) {
+            //    jum.editAvg(function(jum)
+            //    }
+            // }
+            // for (const k of rank) {
+            //     var aa = $('<input type="text" class="rank"/>')
+            //     aa.prop("readonly",true)
+            //     aa.val(k)
+            //     st.editrank.push(aa)
+            //     st.htmlTAG.append(aa)
+            // }
+            // st.htmlTAG.append(st.et)
+            // switch(grade){
+            //     case(jum>=90)
+            // }
+
+            var delBtn = $('<button>삭제</button>')
+            delBtn.on("click", function(){
+                st.htmlTAG.remove()
+                delete arr[st.no]
+                console.log(arr)
+            })
+            // st.htmlTAG.append(delBtn)
+
+            var modifyBtn = $('<button>수정</button>')
+
+            modifyBtn.on("click", function(){
+                if($(this).html()=="수정"){
+                    st.editName.prop("readonly",false)
+                    for (const ej of st.editJum) {
+                        ej.prop("readonly",false)
+                    }
+                    $(this).html("수정완료")
+
+                }else{
+                    st.pname = st.editName.val()
+                    st.jum = []
+                    for (const ej of st.editJum) {
+                        st.jum.push(eval(ej.val()))
+                    }
+
+                    calc(st)
+                    st.editTot.val(st.tot)
+                    st.editAvg.val(st.avg)
+
+                    console.log(st)
+                    $(this).html("수정")
+                }
+                
+            })
+
+            // st.htmlTAG.append(modifyBtn)
+        
+
+
+        $(function(){
+            $("#reg > button").on("click",function(){
+                
+                var st = stInit()
+                calc(st)
+
+                arr[no]=st
+                no++
+                stHtml(st)
+                $("section").append(st.htmlTAG)
+                console.log(arr)
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>exam</h1>
+    <div id="reg">
+        <input type="text" id="pname" value="정성"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <button>추가</button>
+    </div>
+    <section>
+        
+    </section>
+</body>
+</html>

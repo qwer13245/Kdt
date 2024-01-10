@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anonymousEx</title>
+</head>
+<body>
+    <h1>anonymousEx</h1>
+    <script>
+    ////배열(가변매개변수(함수...a))과 함수를 매개변수로 처리하는 함수를 구현하세요
+    // 매개변수 함수의 형태 -> 합, 평균, 최대, 최소 
+    // 람다 표현식: 함수형 프로그래밍을 구성하기 위한 함수식, 자바의 메소드를 간결한 함수 식으로 표현한 것이다.
+    // 람다 함수의 종류에는 자바스크립트의 익명 화살표 함수가 있다.
+    // reduce : 배열의 요소를 하나로 줄이는 작업을 수행하는 함수, reduce 함수로 배열의 각 요소를 순회하면서
+    // 누적된 값을 계산하고 최종 결과를 반환할 수 있다.
+    // document : 웹 페이지 그 자체를 의미한다. 
+    // 조건(삼항) 연산자는 JavaScript에서 세 개의 피연산자를 받는 유일한 연산자이다. 앞에서부터 조건문, 물음표(?),
+    // 조건문이 참(truthy)일 경우 실행할 표현식, 클론(;), 조건문이 거짓(falsy)일 경우 실행할 표현식이 배치된다.
+    // var:변수, 중복선언 가능, 재할당(대입) 가능, let: 중복선언 불가, 재할당 가능, const:중복선언 불가, 재할당 불가
+    // let과 const(상수)의 차이는 재할당 가능여부이다. 재할당이 가능한 let과 달리 const는 재할당 또한 불가하다. 
+    // 재할당이라는 표현은 안쓰는게 좋아요
+    
+    const report = [
+        97,98,99,
+        82,85,88,
+        77,74,78,
+        64,68,61,
+        41,67,89,
+        86,46,34,
+        76,73,56,
+        80,84,84,
+        35,74,89   
+    ];
+
+    const tot = grades => Object.values(grades).reduce((aa,grade)=>aa + grade, 0);
+
+    const avg = grades =>{
+        const values = Object.values(grades);
+        return values.length > 0 ? tot(grades) / values.length : 0;
+    }; 
+
+    const max = grades => Math.max(...Object.values(grades));
+
+    const min = grades => Math.min(...Object.values(grades));
+
+    console.log("총점 : ", tot(report));
+    console.log("평균 : ", avg(report));
+    console.log("최대 : ", max(report));
+    console.log("최소 : ", min(report));
+    //     var studs = [
+    //         "유강남",70,77,75,
+    //         "유강북",63,68,62,
+    //         "유강서",51,59,58
+    // ]
+    // var tot
+    // var avg
+    // var big
+    // var small
+    // function str(){
+    //     document.write("<br>"+str+"<br/>")
+    // }
+    // // str(70,77,75, function(a,b,c){return a+b+c})
+    // str(70,77,75, function(a,b,c){return a+b+c})
+    // str(63,68,62, function(a,b,c){return a+b+c/3})
+
+    // function 변수명("값"){
+    //     function(){
+    //         "값"
+    //     }
+    // }
+
+    // function studs(name,jum){
+    //     studs("유강남",70,77,75,function(){})
+
+    // }
+    ////배열(가변매개변수(함수...a))과 함수를 매개변수로 처리하는 함수를 구현하세요
+    // 매개변수 함수의 형태 -> 합, 평균, 최대, 최소를 람다식으로 구현하세요
+    // 과제 : 학생성적의 합, 평균, 최대, 최소를 람다식으로 구현하세요
+    // function studs(tot,avg,big,small){
+    //     function jum(){
+    //         {70,77,75}
+    //     }
+    // }
+
+    </script>
+</body>
+</html>

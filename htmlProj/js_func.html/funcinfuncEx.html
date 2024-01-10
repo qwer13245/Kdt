@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funcinfuncEx</title>
+    
+</head>
+<body>
+            <!-- 피자 주문을 구현하세요
+            주문 시 토핑을 바꿀 수 있어요
+            이름 : 콤비네이션, 하와이얀, 치즈, 불고기
+            크기 : 스몰, 미디움, 라지 
+            토핑 재료 : 치즈재료, 고기류, 야채(과일)류, 테두리 ==> 알아서 만드는 형태 
+            큰 테두리를 감싸는 function에 토핑을 선택할 수 있도록 하자. Object로 만들면 더 편함
+            토핑을 추가하는 function을 하나 만들어야 함.
+        -->
+    <h1>보르네오 피자</h1>
+    <h2>주문 명세서</h2>
+    <script>
+        function additiontoping(toping){
+            var toping = ""
+        }
+        var menu = "치즈", size = "라지", addition = "고기류", price = "18,000원"
+        function order(menu,size,toping,price){
+            document.write("<br>"+"주문:"+menu+","+size+","+toping+","+price+"<br/>")
+            var menu = "콤비네이션"
+            var size = "라지"
+            var toping = "고기류"
+            var price = "20,000원"
+        }
+        order("콤비네이션","라지","고기류","20,000원")
+        document.write("<hr/>")
+
+        function order2(){
+            document.write("<br>"+"주문:"+menu+","+size+","+addition+","+price+"<br/>")
+        }
+        console.log(order2)
+        order2()
+        document.write("<hr/>")
+
+        function order3(){
+            document.write("<br>"+"주문:"+menu+","+size+","+addition+","+price+"<br/>")
+        }
+        order3()
+        document.write("<hr/>")
+
+        function order4(){
+            document.write("<br>"+"주문:"+menu+","+size+","+addition+","+price+"<br/>")
+        }
+        order4()
+        document.write("<hr/>")
+
+        function order5(menu,size,toping,price){
+            var menu = "불고기"
+            var size = "미디움"
+            var toping = "테두리"
+            var price = "28,000원"
+            document.write("<br>"+"주문:"+menu+","+size+","+toping+","+price+"<br/>")
+        }
+        order5("불고기","미디움","테두리","28,000원")
+        document.write("<hr/>")
+        // function additionalorder(additord){
+            
+        //     function order6(menu,size,toping){
+        //         var menu = "하와이얀", size = "스몰", toping = "야채(과일)류"
+        //         document.write("<br>"+menu+","+size+","+toping+","+additord+"<br/>")
+        //     }
+        //     console.log(order6)
+        // }
+        
+        // order6("하와이얀","스몰","야채(과일)류","고기류")
+
+        function order6(menu,size,toping,price){
+            var menu = "하와이얀"
+            var size = "스몰"
+            var toping = "야채(과일)류"
+            var price = "22,000원"
+            document.write("<br>"+"주문:"+menu+","+size+","+toping+","+price+"<br/>")
+        }
+        order6("하와이얀","스몰","야채(과일)류","28,000원")
+        document.write("<hr/>")
+        // function additionorder(chugatoping){ 
+        //     function order7(menu,size,toping){
+        //         document.write("<br>"+chugatoping+","+menu+","+size+","+toping+"<br/>")
+        //     }
+        //     console.log(arr7)
+        //     document.write("<br>"+chugatoping+","+menu+","+size+","+toping+"<br/>")
+        //     order7("콤비네이션","라지","치즈재료")
+        // }
+
+        function order7(menu,size,toping,price){
+            var menu = "콤비네이션"
+            var size = "스몰"
+            var toping = "치즈재료"
+            var price = "20,000원"
+            document.write("<br>"+"주문:"+menu+","+size+","+toping+","+price+"<br/>")
+        }
+        order7("콤비네이션","라지","치즈재료","20,000원")
+        document.write("<hr/>")
+        function total(menu,cnt,price){
+            document.write("<br>"+"총계:"+menu+","+cnt+","+price+"<br/>")
+        }
+        total("치즈,불고기,하와이얀,콤비네이션","7개","144,000원")
+        document.write("<hr/>")
+    </script>
+</body>
+</html>

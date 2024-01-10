@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototypeExam.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <script>
+         /*
+                학생 prototype을 정의 하고 
+                5명의 학생정보를 출력하세요
+                학생정보 - 이름, 국어, 영어, 수학, 총점, 평균
+        */
+        Student = function(name,jum,tot,avg){
+            this.name = name
+            this.jum = jum
+            this.tot = tot
+            this.avg = avg
+
+            function calc(Student){
+                // student.tot = 0
+                for (const i of jum) {
+                    Student.tot += i
+                }
+                Student.avg = parseInt(Student.tot/Student.jum.length)
+            }
+            // Student.calc()
+            // student.calc()
+        }
+        // Student.calc()
+        // student.calc()
+        // 클래스 변수 = new 클래스
+        $(function(){
+            
+            console.log(Student)
+
+            var st1 =  new Student("박찬호",90,94,97)
+            console.log(st1)
+            // console.log(student.st1)
+            // document.write(st1)
+            // document.write(this.st1)
+            // console.log(st1.tot)
+            // console.log(st1.avg)
+            
+            var st2 = new Student("김현수",83,86,85)
+            console.log(st2)
+            // console.log(st2.tot)
+            // console.log(st2.avg)
+
+            var st3 = new Student("이종범",77,78,79)
+            console.log(st3)
+            // console.log(st3.tot)
+            // console.log(st3.avg)
+
+            var st4 = new Student("이승엽",62,66,68)
+            console.log(st4)
+            // console.log(st4.tot)
+            // console.log(st4.avg)
+
+            var st5 = new Student("류현진",59,58,57)
+            console.log(st5)
+            // console.log(st5.tot)
+            // console.log(st5.avg)
+        })
+
+        Student.prototype = {
+
+            st1 : function(){
+                console.log("Student.st1 :"+ this.tot + "," + this.avg)
+            },
+            
+            st2 : function(){
+                console.log("Student.st2 :"+ this.tot + "," + this.avg)
+            },
+
+            st3 : function(){
+                console.log("Student.st3 :"+ this.tot + "," + this.avg)
+            },
+
+            st4 : function(){
+                console.log("Student.st4 :"+ this.tot + "," + this.avg)
+            },
+
+            st5 : function(){
+                console.log("Student.st5 :"+ this.tot + "," + this.avg)
+            },
+
+            // calc : function(){
+            //     console.log("Student.calc :"+ this.tot + "," + this.avg)
+            // },
+
+            toString : function(){
+                return this.name + "," + this.jum + "," + this.tot + "," + this.avg
+            }
+        }
+        Student.calc()
+        // student.st1()
+        // student.st2()
+        // student.st3()
+        // student.st4()
+        // student.st5()
+    </script>
+</head>
+<body>
+    <h1>prototypeExam</h1>
+    <!-- <div>이름</div>
+    <div>총점</div>
+    <div>평균</div> -->
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Open+Sans:ital,wght@1,300&family=Rubik+Doodle+Shadow&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        html{
+            font-size: 20px;/*기준 크기*/
+        }
+        .box{
+            width:800px;
+            height: 200px;
+            border: 1px solid #333;
+            margin: 50px;
+        }
+        .box:nth-of-type(1){
+            font-family: 'Diphylleia';
+            font-size: 16px;
+        }
+        .box:nth-of-type(1) > div{
+            font-size: 8px;
+        }
+        .box:nth-of-type(1) > div > div{
+            font-size: 32px;
+        }
+
+        .box:nth-of-type(2){
+            height: 300px;
+            font-family: 'Open Sans:ital';
+            font-size: 2em; /* html 크기의 2 배 : 20px * 2 : 40px */
+        }
+        .box:nth-of-type(2) > div{
+            font-size: 1.5em; /* em은 부모 element의 크기 대비로 변경된다.
+                                html (20px) 기준이 아님
+                                .box:nth-of-type(2) 기준임 40px * 1.5 : 60px
+                                */
+        }
+        .box:nth-of-type(2) > div > div{
+            font-size: 0.5em;/* em은 부모 element의 크기 대비로 변경된다.
+                                html (20px) 기준이 아님
+                                .box:nth-of-type(2) > div 기준임 60px * 0.5 : 30px
+                                */
+        }
+        .box:nth-of-type(3){
+            font-family: 'Rubik Doodle Shadow';
+            height: 300px;
+            font-size: 2rem; /* html 크기의 2 배 : 20px * 2 : 40px */
+        }
+        .box:nth-of-type(3) > div{
+            font-size: 1.5rem; /* rem은 html의 크기 대비로 변경된다.
+                                html (20px) 기준 20px * 1.5 : 30px
+                                .box:nth-of-type(2) 기준이 아님
+                                */
+        }
+        .box:nth-of-type(3) > div > div{
+            font-size: 0.5rem; /* rem은 html의 크기 대비로 변경된다.
+                                html (20px) 기준 20px * 0.5 : 10px
+                                .box:nth-of-type(2)> div  기준이 아님
+                                */
+        }
+        .box:nth-of-type(4){
+            font-family: 'Single Day';
+            font-size: 10px;
+        }
+        .box:nth-of-type(4) > div{
+            font-size: 1.5rem; /* rem은 html의 크기 대비로 변경된다.
+                                html (20px) 기준 20px * 1.5 : 30px
+                                .box:nth-of-type(4) 기준이 아님 ==> 15px 이 아님
+                                */
+        }
+        .box:nth-of-type(4) > div > div{
+            font-size: 0.5em; /* 
+            rem, em을 혼용 사용 가능
+            
+            em은 부모 element의 크기 대비로 변경된다.
+            html (20px) 기준이 아님
+            .box:nth-of-type(4) > div 기준임 30px * 0.5 : 15px
+            */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>font</h1>
+    <div class="box">
+        Lorem ipsum dolor sit amet 
+        <div>
+            Libero, architecto iure hic 
+            <div>
+                accusantium in laboriosam! 
+            </div>
+        </div>
+        repudiandae pariatur, magni iusto?
+    </div>
+    <div class="box">
+        Lorem ipsum dolor sit amet 
+        <div>
+            Libero, architecto iure hic 
+            <div>
+                accusantium in laboriosam! 
+            </div>
+        </div>
+        repudiandae pariatur, magni iusto?
+    </div>
+    <div class="box">
+        Lorem ipsum dolor sit amet 
+        <div>
+            Libero, architecto iure hic 
+            <div>
+                accusantium in laboriosam! 
+            </div>
+        </div>
+        repudiandae pariatur, magni iusto?
+    </div>
+    <div class="box">
+        Lorem ipsum dolor sit amet 
+        <div>
+            Libero, architecto iure hic 
+            <div>
+                accusantium in laboriosam! 
+            </div>
+        </div>
+        repudiandae pariatur, magni iusto?
+    </div>
+
+</body>
+</html>

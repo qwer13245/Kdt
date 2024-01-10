@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam2</title>
+</head>
+<body>
+    <script>
+        var name = "정우성";
+        var kor = 90;
+        var eng = 88;
+        var math = 87;
+        var tot = kor+eng+math;
+        var avg = tot/3;
+        var rank = ["","가","가","가","가","양","미","우","수","수"];
+        
+        if(kor>=80 && eng>=80 && math>=80 && kor<90 && eng<90 && math<90){
+
+            var rank = "균등";
+        }
+        Math.trunc() 
+
+        document.write("<h1>이름:정우성"+name+"</h1>");
+        document.write("<p>국어"+kor+"</p>");
+        document.write("<p>영어"+eng+"</p>");
+        document.write("<p>수학"+math+"</p>");
+        document.write("<p>총점"+tot+"</p>");
+        document.write("<p>평균"+Math.trunc(avg)+"</p>");
+        document.write("<p>등급"+rank[Math.trunc(avg/10)]+"</p>");
+        console.log(Math.trunc(avg));
+    </script>
+    
+</body>
+</html>

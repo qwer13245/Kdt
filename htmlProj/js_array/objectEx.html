@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objectEx</title>
+    <!-- 
+    반, 성별, 이름, 국어, 영어, 수학 , 총점, 평균, 등급, 등수 를 출력하세요
+    정렬 순서
+    반 > 성별 > 평균 > 이름
+    등급에 따라 수 - 빨강, 우 - 주황, 미 - 노랑 , 양 - 녹색 , 가 - 보라 로 배경생을 지정하세요
+    등급에 따라 수 - 빨강, 우 - 주황, 미 - 노랑 , 양 - 녹색 , 가 - 보라 로 배경생을 지정하세요
+    div로 구성하세요 
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            width: 300px;
+            height: 100px;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>objectEx</h1>
+    <script>
+        // function list(name){
+        //     this.ban = ban;
+        //     this.gender = gender;
+        //     this.name = name;
+        //     this.kor = kor;
+        //     this.eng= eng;
+        //     this.math = math;
+        //     this.tot = tot;
+        //     this.avg = avg;
+        //     this.jum = new Array();
+        //     this.str = new Array();
+        //     this.grade = grade; 
+        //     this.rank = rank; 
+
+        //     this.str[0] = ban;
+        //     this.jum[0] = ban;
+        //     this.str[1] = Math.floor(Math.random() * (100-60+1)+60); 
+        //     this.str[2] = Math.floor(Math.random() * (100-60+1)+60);
+        //     this.str[3] = Math.floor(Math.random() * (100-60+1)+60);
+        //     this.str[4] = Math.floor(Math.random() * (100-60+1)+60);
+        //     this.str[5] = Math.floor(Math.random() * (100-60+1)+60);
+        //     this.str[6] = Math.floor(Math.random() * (100-60+1)+60);
+        //     this.str[7] = Math.floor(Math.random() * (100-60+1)+60);
+        //     this.str[8] = Math.floor(Math.random() * (100-60+1)+60);
+
+        //     this.ttt=function(){
+        //         this.str[1] = this.str[1] + this. str[2] + this.str[3] + this.str[4] +
+        //         this.str[5] + this.str[6] + this. str[7] + this. str[8];
+        //     }
+        //     this.avg = function(){
+        //         this.str[2] = this.str[1] / 8;
+        //     }
+        // }
+        // var student = new list
+
+        var studs = [
+            [1, 남,"유강남", 78, 75, 72,"가"],
+            [3, 여,"박용택", 67, 63, 68,"수"],
+            [2, 남,"이정후", 54, 56, 59,"양"],
+            [1, 남,"강백호", 43, 48, 46,"미"],
+            [2, 여,"추신수", 32, 35, 37,"우"],
+            [3, 남,"황재균", 21, 25, 28,"가"],
+            [1, 남,"로맥", 19, 17, 16,"미"],
+            [2, 여,"이승엽", 85, 88, 83, 84,"양"],
+            [3, 남,"이종범", 94, 96, 99,"우"],
+            [2, 여,"이만수", 97, 63, 64, 76,"가"],
+            [1, 여,"류현진", 83, 67, 92, 43,"수"],
+        ]
+        const kinds = "일반, 예체능".split(",")
+        const grade = "가가가가가가양미우수수"
+        const rate = [0.2, 0.15, 0.05, 0.6]
+
+        for (var tt of studs) {
+            const jum = tt.slice(1);
+            var tot = 0;
+            var kind = kindArr[jum.length - 7];
+            var avg = 0;
+
+            for (var i in jum) {
+                tot += jum[i]
+                avg += jum[i] * rate[i]
+            }
+
+            if (kinds == "일반") {
+                avg = tot / (jum.length)
+            }
+
+            tt.push(kinds)
+            tt.push(grade[parseInt(avg / 10)])
+            tt.push(avg)
+            tt.push(tot)
+            document(tt + "<br/>")
+        }
+
+        for (var k in studs) {
+            var rank = 1
+            var me = studs[i]
+            for (var you of studs) {
+                if (me[1] < you[1] && me[3] == you[3]) {
+                    rank++
+                }
+            }
+            studs[k].push(rank)
+            document.write(studs[k] + "<br/>")
+        }
+    </script>
+<!-- 
+    반, 성별, 이름, 국어, 영어, 수학 , 총점, 평균, 등급, 등수 를 출력하세요
+    정렬 순서 
+    반 > 성별 > 평균 > 이름
+    등급에 따라 수 - 빨강, 우 - 주황, 미 - 노랑 , 양 - 녹색 , 가 - 보라 로 배경색을 지정하세요
+    div로 구성하세요 
+    -->
+    <div class="title">
+        <div>ban</div>
+        <div>gender</div>
+        <div>name</div>
+        <div>kor</div>
+        <div>eng</div>
+        <div>math</div>
+        <div>tot</div>
+        <div>avg</div>
+        <div>grade</div>
+        <div>rank</div>
+    
+    <script>
+        for (var tt of studs) {
+            var str = "<div class=" + tt[2] + ">"
+
+            for (let j = 3; j < tt.length - 1; j++) {
+                str += "<div>" + tt[j] + "</div>"
+
+            }
+
+            if (tt[3] == "일반") {
+                str += "<div>" + aa + "</div>"
+            }
+
+            str += "<div>" + tt[tt.length - 1] + "</div>"
+    
+            document.write(str)
+            let result = "ban + \t + gender + \t + name + \t + kor + \t + eng + \t + math + \t + tot + \t + avg + \t + grade + \t + rank"
+            for (const k in studs) {
+                result += studs[i]/toString();
+        }
+    }
+        console.log(result);
+        alert(result);
+    </script>
+    </div>
+</body>
+
+</html>

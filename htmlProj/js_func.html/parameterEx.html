@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coffieMenu</title>
+</head>
+<body>
+    <h1>coffieMenu</h1>
+    
+    <script>
+        /*
+        커피를 주문하세요
+        주문 : 커피종류, 수량
+
+        아메리카노 : 1800
+        아시아노 : 2100
+        아프리카노 : 2200
+        
+        주문시 생략가능
+        커피종류 : 아메리카노
+        수량 : 1
+        
+        */
+        
+        // 주문 : 커피종류, 수량
+        // 아메리카노 : 1800
+        // 아시아노 : 2100
+        // 아프리카노 : 2200
+        // 주문시 생략가능
+        // 커피종류 : 아메리카노
+        // 수량 : 1
+        
+        function order([menu,cnt,price]=["아메리카노","1잔","1800원"]){
+            document.write("<br>"+"menu : "+menu+","+" cnt : "+cnt+","+" price : "+price+"<br/>")
+        }
+        console.log(order)
+        order()
+        // order(["americano",1,1800])
+        document.write("<hr/>")
+
+        function order_1([menu,cnt,price]=["아프리카노","2잔","4400원"]){
+            document.write("<br>"+"menu : "+menu+","+" cnt : "+cnt+","+" price : "+price+"<br/>")
+        }
+        console.log(order_1)
+        order_1(["아프리카노","2잔","4400원"])
+        document.write("<hr/>")
+
+        function order_2([menu,cnt,price]=["아시아노","4잔","8400원"]){
+            document.write("<br>"+"menu : "+menu+","+" cnt : "+cnt+","+" price : "+price+"<br/>")
+        }
+        console.log(order_2)
+        order_2(["아시아노","4잔","8400원"])
+        document.write("<hr/>")
+
+        function total([menu,cnt,price]=["아메리카노","아프리카노","아시아노","7잔","14,600원"]){
+            document.write("<br>"+"menu : "+menu+","+" cnt : "+cnt+","+" price : "+price+"<br/>")
+        }
+        console.log(total)
+        total(["3개","7잔","14,600원"])
+        
+        
+    </script>
+</body>
+</html>

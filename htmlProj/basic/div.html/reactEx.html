@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reactEx</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            /* background-color: #888; */
+            background-color: #0cc5f4;
+        }
+        @media screen and (max-width:900px){
+            body{
+                background-color: #0cc5f4;
+            }
+        }
+        @media screen and (max-width:700px){
+            body{
+                background-color: #00f;
+            }
+        }
+        @media screen and (max-width:600px){
+            body{
+                background-color: #ff0;
+            }   
+        }
+        @media screen and(max-width:500px){
+            body{
+                background-color: rgb(116, 238, 112);
+            }
+        }
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .react{ /*fixed*/
+            width: 300px;
+            height: 200px;
+            background-color: #00f;
+            display:block;
+            float: left;
+            flex-direction:column;
+            margin: auto;
+            
+            
+        }
+        .react1{/*flex*/
+            width: 300px;
+            height: 200px;
+            background-color: rgb(227, 227, 78);
+            flex-direction:column;
+            display:inline-block;
+            margin: auto;
+            
+        }
+        .react2{/*flex*/
+            width: 300px;
+            height: 200px;
+            background-color: rgb(116, 238, 112);
+            display:inline-block;
+            align-content: center;
+            flex-direction: column;
+            margin: auto;
+            
+        }
+        .box{/*가변 width*/
+            width: 300px;
+            height: 200px;
+            background-color: #000;
+            flex-direction: column;
+            display:inline-block;
+            align-items: center;
+            margin: auto;
+           
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>react</h1>
+    <div class="wrapAll">
+        <div id="react">
+        <div>box1</div>
+    </div>
+    <div id="box">
+        <div>bar</div>
+    </div>
+    <div id="react1">
+        <div>box2</div>
+    </div>
+    <div id="react2">
+        <div>box3</div>
+    </div>
+    </div>
+</body>
+</html>

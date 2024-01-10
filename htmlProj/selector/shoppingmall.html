@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이달의 상품</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 250px;
+            height: 50px;
+            border: 1px solid #888;
+        }
+
+        img {
+            align-items: center;
+            flex-direction: row;
+            width: 200px;
+            height: 150px;
+            display:block;
+            justify-content: center;
+        }
+
+        h1::before{
+            content: "이달의 상품";
+            width: 300px;
+            height: 30px;
+            background: #0f0;
+            display: block;
+        }
+        .img01::after {
+            content: "";
+            width: 100px;
+            height: 70px;
+            background-image: url(../table/SMALLMAN.jpg);
+            background-size: 100px 70px;
+            background-color: #ff0;
+            display: block;
+
+        }
+
+        .im02::after {
+            content: "";
+            width: 100px;
+            height: 70px;
+            background-image: url(../table/smallmanlogo_main.png);
+            background-size: 100px 70px;
+            background-color: #00f;
+            display: block;
+        }
+
+        .im_jjj::after {
+            display: block;
+            width: 100px;
+            height: 70px;
+            background-image: url(../table/미토샵.png);
+            background-size: 100px 70px;
+            background-color: #f00;
+            
+        }
+
+        .im03::after {
+            content: "";
+            width: 100px;
+            height: 70px;
+            background-image: url(../table/spring.jpg);
+            background-size: 100px 70px;
+            display: block;
+        }
+
+        .img04::after {
+            content: "";
+            width: 100px;
+            height: 70px;
+            background-image: url(../table/여름jfif.jfif);
+            background-size: 100px 70px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>베스트50</h1>
+    <img class="logo" src="../basic/div.html/logo.png" alt="">
+    <img class="img01" src="../basic/div.html/옷1.jpg" alt="">
+    <p>[신상품]2Color, 245~250-275~280<br />15,900원<br />리뷰:19<br /></p>
+    <img class="img02" src="../basic/div.html/옷2.jpg" alt="">
+    <p>[베스트]CHAUD 라운드 발열 니트<br />2Color, 100|105<br />22,000원<br />리뷰:1</p>
+    <div class="im_jjj">
+        <img class="img03" src="../basic/div.html/옷3.jpg" alt="">
+        <p>[품절]텍티컬 전술 쉴드 밴딩 바지<br />3Color, 30|32|34|36<br />29,800원<br />리뷰:26<br />품절</p>
+    </div>
+    <img class="img04" src="../basic/div.html/옷4.jpg" alt="">
+    <p>[베스트]화이트 밀리터리 방수<br/> 기모 보드 패딩 점퍼<br />1Color, S|L|XL|2XL|3XL<br />59,800원<br />리뷰:1</p>
+</body>
+
+</html>

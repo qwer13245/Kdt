@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bannerEx</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 150px;
+            height: 100px;
+            display: block;
+            float: left;
+        }
+
+        .wrapper {
+            width: 150px;
+            height: 100px;
+            overflow: hidden;
+            margin: auto;
+            position: relative;
+        }
+
+        #boxs {
+            position: absolute;
+            width: 1600px;
+            height: 150px;
+            left: 0;
+            transition-duration: 0.5s;
+        }
+
+        .button {
+            position: relative;
+            width: 150px;
+            height: 100px;
+            margin: auto;
+            right: auto;
+            justify-content: center;
+            /* display: block; */
+            /* flex-direction: column; */
+        }
+
+        #box2 {
+            position: relative;
+            width: 120px;
+            height: 50px;
+            display: block;
+            /* flex: content; */
+            /* flex-direction: column; */
+        }
+    </style>
+    <script>
+        //스크립트 상단에 아이디를 불러오는 식 쓰고, 클릭하면 멈추게 하는 함수를 만들어서  
+        window.onload = function () {
+            var a = 0
+
+            var boxs = document.getElementById("boxs")
+            var box2 = document.getElementById("box2")
+
+            function run() {
+                a++
+                if (a >= 7) {
+                    a = 0
+                }
+            // var box2 = document.getElementById("box2")
+                function play() {
+                    
+                }
+                function stop() {
+                    // if(confirm("정지"))
+                    clearInterval(stop,8)
+                }
+                // boxs.style.left = -200 * a + "px"
+                // boxs.scroll.left = -200 * a + "px"
+                boxs.style.left = -200 * a + "px"
+
+                wrapper.button.box2 = function(){
+                    
+                }
+                // wrapper.boxs.box2.onclick = function(){
+                //     clearInterval(stop)
+                // }
+                // wrapper.boxs.box2.onclick = function(){
+                //     this.play = true;
+                //     this.stop = false;
+                // }
+                // wrapper.boxs.onclick=function(){
+                //     this.play = true
+                //     this.stop = false
+                // }  
+            }
+
+            // document.write(run)
+            // run()
+            setInterval(run, 2000)
+            console.log(run)
+            // document.write(run+"<br/>")
+        }
+
+        // boxs()
+    </script>
+</head>
+
+<body>
+    <h1>bannerEx</h1>
+    <div class="wrapper" name="qqq">
+        <div id="boxs">
+            <img src="../basic/div.html/옷1.jpg" alt="">
+            <img src="../basic/div.html/옷2.jpg" alt="">
+            <img src="../basic/div.html/옷3.jpg" alt="">
+            <img src="../basic/div.html/옷4.jpg" alt="">
+            <img src="../basic/div.html/옷5.jpg" alt="">
+            <img src="../basic/div.html/옷6.jpg" alt="">
+            <img src="../basic/div.html/옷7.jpg" alt="">
+        </div>
+    </div>
+    <div class="button">
+        <div id="box2">
+            <img src="./button.png" alt="" id="box2">
+        </div>
+</body>
+
+</html>

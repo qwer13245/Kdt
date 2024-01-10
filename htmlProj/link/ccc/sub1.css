@@ -1,0 +1,5 @@
+div{/*중첩된 경우 먼저 작성된 style은 적용되지 않는다.*/
+    width:100px;
+    height: 50px;
+    border: 1px solid #000;
+}

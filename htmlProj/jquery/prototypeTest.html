@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototypeTest</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        var no = 0
+        var arr = {}
+        //입력부
+        Stud = function (name, jum, tot, avg, rank) {
+            this.name = $('<input type="text" />')
+            this.jum = []
+            this.tot = $('<input type="text" readonly/>')
+            this.avg = $('<input type="text" readonly/>')
+            this.rank = $('<input type="text" readonly/>')
+        }
+        //연산부
+        Stud.prototype = {
+
+            calc: function () {
+                this.tot = 0
+                for (const j of this.jum) {
+                    this.tot += j
+                }
+                this.avg = Math.floor(this.tot / this.jum.length)
+            },
+
+            str: function () {
+                return "<div>" + this.name + "," + this.jum + "," + this.tot + "," + this.avg
+            }
+        }
+        function std(Stud){
+
+            Stud.htmlTG = $("<div class = student")
+        }
+        //출력부
+        $(function () {
+
+            console.log(Stud)
+
+            var Stud = [
+
+                new Stud("강한울", 96, 97, 98),
+                new Stud("이정후", 86, 87, 88),
+                new Stud("최정", 76, 77, 78),
+                new Stud("로맥", 66, 67, 68),
+                new Stud("김현수", 56, 57, 53),
+                new Stud("김광현", 46, 77, 54),
+                new Stud("나성범", 86, 37, 68),
+                new Stud("이승엽", 96, 47, 76),
+                new Stud("정근우", 56, 67, 48),
+                new Stud("이태양", 66, 37, 28),
+
+            ]
+
+
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <h1>prototypeTest</h1>
+
+    <div id="test">
+
+        <input type="text" id="name" value="강한울"/>
+        <input type="text" id="name" value="이정후"/>
+        <input type="text" id="name" value="최정"/>
+        <input type="text" id="name" value="로맥"/>
+        <input type="text" id="name" value="김현수"/>
+        <input type="text" id="name" value="김광현"/>
+        <input type="text" id="name" value="나성범"/>
+        <input type="text" id="name" value="이승엽"/>
+        <input type="text" id="name" value="정근우"/>
+        <input type="text" id="name" value="이태양"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+
+        <button>추가</button>
+    </div>
+    <section/>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <td><img src="../link/네이버로고/네이버 로고 (15).png" alt="" width="140px"></td>
+    <table>
+        <h1>네이버 회원가입</h1>
+        <form action="loginReg.html">
+            아이디&nbsp;&nbsp;&nbsp;<input type="text" name="pname" value="@naver.com" size="41px" maxlength="18"><br />
+            비밀번호<input type="password" name="pw" size="41px" maxlength="8"><br />
+        </form>
+
+        <form action="joinReg.html">
+            <table border="">
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" name="pname" placeholder="한글로입력해주세요"></td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td><input type="text" name="birthday" value="생년월일" maxlength="8"></td>
+                </tr>
+                <tr>
+                    <td>통신사</td>
+                    <td>
+                        <input type="checkbox" name="LG U+">
+                        <select name="LG U+">
+                            <option value="SKT">SKT</option>
+                            <option value="KT">KT</option>
+                            <option value="LG U+">LG U+</option>
+                            <option value="SKT 알뜰폰">SKT 알뜰폰</option>
+                            <option value="KT 알뜰폰">KT 알뜰폰</option>
+                            <option value="LG U+ 알뜰폰">LG U+ 알뜰폰</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>성별/국적</td>
+                    <td>
+                        <input type="radio" name="gender" value="man">남자
+                        <input type="radio" name="gender" value="female">여자
+                        <input type="radio" name="nationality" value="local">내국인
+                        <input type="radio" name="nationality" value="foreigner">외국인
+                    </td>
+                </tr>
+                <tr>
+                    <td>휴대전화번호</td>
+                    <td>
+                        <input type="text" name="phonenumber" value="" maxlength="13">
+                    </td>
+                </tr>
+                <tr>
+                    <td>약관 전체동의</td>
+                    <td>
+                        <input type="radio" name="[필수]인증 약관 전체동의">
+                    </td>
+                <tr>
+                    <td colspan="2" align="button">
+                        <input type="submit" value="인증요청">
+        </form>
+</body>
+
+</html>

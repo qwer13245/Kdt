@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 회원가입</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        form{
+            margin: 250px;
+        }
+
+        img{
+            width: 170px;
+            height: 100px;
+            margin-bottom: 1px;
+        }
+
+        fieldset{
+            width: 400px;
+            height: 50px;
+            margin-bottom: 1px;
+        }
+
+        legend{
+            background-color: #0f0;
+            width: 71px;
+            height: 24px;
+            border-radius: 5px;
+        }
+
+        #pid{
+            width: 200px;
+            height: 24px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        #pw{
+            width: 200px;
+            height: 24px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        #gender{
+            background-color: #0f0;
+            width: 100px;
+            height: 24px;
+            text-align: left;
+        }
+
+        #name{
+            background-color: #fff;
+            width: 100px;
+            height: 24px;
+            border-radius: 5px;
+        }
+
+        #birthday{
+            width: 200px;
+            height: 24px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        #phone{
+            width: 200px;
+            height: 24px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        #phoneNum{
+            width: 200px;
+            height: 24px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        
+        button {
+            background-color: #0f0;
+            color: #fff;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid #777;
+            border-radius: 10px 5px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <img src="../link/네이버로고/네이버 로고 (15).png" alt="" width="140" id="img">
+    <h1 align="center">네이버 회원가입</h1>
+    <form action="">
+        <fieldset>
+        <legend>아이디</legend>
+        <input type="text" name="" id="pid">
+        </fieldset>
+
+        <fieldset>
+            <label><legend>비밀번호</legend><input type="text" name="" id="pw" maxlength="8"></label>
+        </fieldset>
+
+        <fieldset>
+            <label><legend>이름</legend><input type="text" name="" id="name" maxlength="8"></label>
+        </fieldset>
+
+        <fieldset>
+            <label><legend>생년월일</legend><input type="text" name="" id="birthday"></label>
+        </fieldset>
+         
+        <label for="mobile carrier"><legend>통신사</legend><input type="text" name="" id="phone"></label>
+        <select name="phone2" id="">
+            <option>LG U+</option>
+            <option>SKT</option>
+            <option>KT</option>
+            <option>SKT 알뜰폰</option>
+            <option>KT 알뜰폰</option>
+            <option>LG U+ 알뜰폰</option>
+        </select>
+        </fieldset>
+
+        <fieldset>
+            <legend id="gender">성별/국적</legend>
+            <label><input type="radio" name="gender">남</label>
+            <label><input type="radio" name="gender">여</label>
+            <label><input type="radio" name="nationality">내국인</label>
+            <label><input type="radio" name="nationality">외국인</label>
+        </fieldset>
+
+        <fieldset>
+        <label><legend>휴대전화번호</legend><input type="text" name="" id="phoneNum" maxlength="13"></label>
+    </fieldset>
+    <fieldset>
+        <label>약관 전체동의<input type="radio" name="[필수]인증 약관 전체동의"></label>
+    </fieldset>
+    <fieldset>
+        <button align="button">가입</button>
+    </fieldset>
+</form>   
+</body>
+
+</html>

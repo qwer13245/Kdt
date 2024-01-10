@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <h1>function</h1>
+    <script>
+        function triangle(a,b){
+            document.write("<br>"+"직각삼각형 둘레:"+a+b+"</br>")
+            return 13
+            
+        }
+        function triangle(a,b){
+            document.write("<br>"+"직각삼각형 넓이:"+a*b/2+"</br>")
+            return 16;
+        }
+        var aa = triangle(7,8)
+        triangle(7,8)
+        console.log(aa)
+        document.write("<br>"+aa+"</br>")
+
+        function rectangle(a,b){
+            document.write("<br>"+"직사각형의 둘레:"+a+b+"<br/>")
+            return 14;
+        }
+        function rectangle(a,b){
+            document.write("<br>"+"직사각형의 넓이:"+a+b*2)   
+        }
+        var bb = rectangle(5,6,7)
+        rectangle(5,6,7)
+        console.log(bb)
+        document.write("<br>"+bb+"</br>")
+
+        function circle(a,b,I){
+            document.write("<br>"+"원의 둘레:"+a+a+b+"</br>")
+            return 12;
+        }
+        function circle(a,b,I){
+            document.write("<br>"+"원의 넓이:"+a+b*I+"</br>")
+            return 12;
+        }
+        var cc = circle(8,9)
+        circle(8,9)
+        console.log(cc)
+        document.write("<br>"+cc+"</br>")
+    </script>
+</body>
+</html>

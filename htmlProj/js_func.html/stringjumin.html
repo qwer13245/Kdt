@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stringjumin</title>
+</head>
+<body>
+    <h1>stringjumin</h1>
+    <script>
+    ///주민번호  생년월일, 성별, 국적
+    // 주민번호 앞자리로 생년월일 성별 국적을 구해야 함
+    // 생년월일 - 주민번호의 몇번째는 생년월일 뒷번호의 몇번째는 성별, 국적을 나타냄
+    // if문으로 사용하세요
+    // document.write("<br>"+number+"<br/>"), document.write("<br>+number.substr(2,6)+"<br/>") = 생년월일
+    // 주민번호 뒷자리가 1로 시작하면 1900년대, 2로 시작하면 2000년대, 1로 시작하면 남자, 2로 시작하면 여자,
+    // 뒷자리가 4로 시작하면 외국인
+        var arr = "950829-1234567".split("-")
+
+        for(const number of arr){
+            // document.write("<br>"+number.)
+            document.write("<br>"+number+"<br/>")
+            // document.write("<br>"+number.startsWith("0")+"<br/>")
+            // document.write("<br>"+number(2,6)+"<br/>")
+            document.write("<br>"+number.substring(2,6)+"<br/>")
+            
+
+            // if(document.write("<br>"+number.startsWith("1"))){
+                
+            // }
+
+
+
+            // arr[2,6] = "생년월일" 
+            // if (arr[2,6]==0) {
+            //     return "생년월일"
+            // }
+        }
+        // number("생일","성별","국적")
+        
+
+    </script>
+</body>
+</html>

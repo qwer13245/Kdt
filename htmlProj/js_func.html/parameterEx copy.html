@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coffieMenu</title>
+</head>
+<body>
+    <h1>coffieMenu</h1>
+    
+    <script>
+        /*
+        커피를 주문하세요
+        주문 : 커피종류, 수량
+
+        아메리카노 : 1800
+        아시아노 : 2100
+        아프리카노 : 2200
+        
+        주문시 생략가능
+        커피종류 : 아메리카노
+        수량 : 1
+        
+        */
+
+        var tot = 0
+        function order(menu = "아메리카노", cnt = 1){
+            const price = {"아메리카노":1800, "아시아노":2100, "아프리카노":2200} 
+
+            var money = price[menu] * cnt
+            tot += money
+            document.write(menu+"("+price[menu]+"):"+cnt +"=>"+money +"<br/>")
+
+        }
+
+
+        order("아프리카노",3)
+        order("아시아노")
+        order("아메리카노",2)
+        order()
+        order("아프리카노")
+        order()
+        document.write("합계 : "+tot+"<br/>")
+    </script>
+</body>
+</html>

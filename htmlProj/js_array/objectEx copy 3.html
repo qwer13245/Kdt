@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objectExam</title>
+</head>
+<body>
+    <h1>objectExam</h1>
+    <script>
+        /*
+반, 성별, 이름, 국어, 영어, 수학 , 총점, 평균, 등급, 등수 를 출력하세요
+정렬 순서
+반 > 성별 > 평균 > 이름
+등급에 따라 수 - 빨강, 우 - 주황, 미 - 노랑 , 양 - 녹색 , 가 - 보라 로 배경생을 지정하세요
+div로 구성하세
+*/
+        const oriArr = [
+            "1,일효리,남,77,78,72",
+            "2,이효리,남,57,58,52",
+            "3,삼효리,여,67,68,62",
+            "1,사효리,여,97,98,92",
+            "1,오효리,남,87,88,82",
+            "2,육효리,여,57,68,72",
+            "2,칠효리,남,47,38,22",
+            "3,팔효리,여,77,88,92",
+            "3,구효리,남,76,85,24",
+            "2,열효리,여,71,82,23",
+            "3,나효리,여,79,85,22",
+            "2,가효리,남,97,68,24",
+            "3,다효리,남,17,28,32",
+            "1,라효리,여,77,48,62",
+            "2,마효리,여,76,83,21"
+        ]
+        //document.write("5+3*5")
+        //document.write(eval("5+3*5"))
+        var data = []
+        for (const ori of oriArr) {
+            const arr = ori.split(",")
+            var st = {
+                ban:arr[0],
+                name:arr[1],
+                gender:arr[2],
+            }
+            st.jum = []
+            for (const i of arr.slice(3)) {
+                st.jum.push(eval(i))
+            }
+
+            st.tot = 0
+            for (const j of st.jum) {
+                st.tot += j
+            }
+            st.avg = Math.floor( st.tot/st.jum.length)
+            
+            console.log(st)
+            data.push(st)
+        }
+    </script>
+</body>
+</html>

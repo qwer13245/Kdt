@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIPS STORY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "맑은 고딕", "Malgun Gothic", "돋움", Dotum, "굴림", Gulim, Helvetica, AppleGothic, sans-serif;
+            font-size: 12px;
+            line-height: 1px;
+            color: #555;
+        }
+
+        content::after {
+            content: ".";
+            display: block;
+            height: 0px;
+            clear: both;
+            visibility: hidden;
+        }
+
+        header {
+            position: absolute;
+            height: 151px;
+            box-sizing: border-box;
+            z-index: 3;
+            width: 1000px;
+            background-color: #931414;
+            background: url(../form.html/스크린샷\ 2023-12-27\ 005011.png);
+        }
+
+        .img {
+            width: 1700px;
+            height: 150px;
+            vertical-align: top;
+            border: 0 none;
+            overflow: content-box;
+            overflow: clip;
+        }
+
+        .vips img {
+            width: 200px;
+            height: 150px;
+            vertical-align: auto;
+            border: 0 none;
+            overflow: clip;
+        }
+
+        /* li {
+            list-style: none;
+            display: list-item;
+            float: left;
+            width: 159px;
+            height: 50px;
+            background-color: #ccc;
+            line-height: 50px;
+            text-align: center;
+            border-right: 1px solid #333; 
+
+        }  */
+
+        .ul {
+            list-style: disc;
+            width: 159px;
+            height: 50px;
+            background-color: #ccc;
+            line-height: 50px;
+            text-align: center;
+            border-right: 1px solid #333;
+
+        }
+
+        dl {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        /* header,.topmenu,li,a{
+            color: #9c806b;
+            font-size: 12px;
+        } */
+        /* h1 {
+            font-size: 2em;
+            font-weight: bold;
+            background: #931414;
+            
+        } */
+
+        h3 {
+            width: 300px;
+            display: block;
+            font-size: 1.17em;
+            font-weight: bold;
+        }
+
+        /* header, .menuba>ul>li>a{
+            display: block;
+            position: relative;
+            padding: 24px 0px 25px;
+            font-weight: 600px;
+            font-size: 15px;
+            color: #fff;
+        } */
+        content.vips-story {
+            width: 750px;
+            height: 400px;
+            font-size: 12px "Nanum Gothic", serif;
+            padding: 15px 0px 30px;
+            display: block;
+            margin-top: -130px;
+            /* gap: 10px; */
+            /* position: absolute;
+            left: 300px;
+            top: 1000px; */
+        }
+
+        /* .container:hover {
+            border-radius: 50%;
+            border-bottom: 20px solid slateblue;
+            top: 151px;
+            position: relative;
+            background: #888;
+            z-index: 1;
+
+        } */
+
+        .vips-story dd {
+            font-family: 'Nanum Gothic', serif;
+            padding: 15px 0px 30px;
+            line-height: 20px;
+            font-size: 12px;
+            color: #555555;
+            font-weight: 400;
+        }
+
+        .vips-story dd+dt {
+            border-top: 1px solid #d0c4b2;
+        }
+
+        .vips-story dt {
+            font-family: 'Nanum Gothic', serif;
+            padding-top: 30px;
+            font-size: 18px;
+            color: #3a2b1f;
+            font-weight: 700;
+        }
+
+        .vips-story {
+            width: 1000px;
+            height: 5px;
+            margin: 3px;
+            /* padding: 15px 0px 30px; */
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .vips-story>div {
+            width: 500px;
+            height: 100px;
+
+        }
+
+        dt {
+            display: block;
+        }
+
+        /* content::before{
+            content:".";
+            display:none;
+            height: 0px;
+            clear: both;
+            visibility: hidden;
+        } */
+        content::after {
+            content: ".";
+            display: inline;
+            height: 0px;
+            clear: both;
+        }
+
+        .btn_container {
+            position: fixed;
+            top: 5%;
+            right: 2%;
+            height: button-width;
+            cursor: pointer;
+            z-index: 100;
+            transition: opacity .25s ease;
+        }
+
+        div:hover {
+            opacity: .7;
+        }
+
+        .active {
+            .top {
+                transform: translateY(11px)translateX(0)rotate(45deg);
+                background: color-active;
+            }
+        }
+
+        .middle {
+            opacity: 0;
+            background: color-active;
+        }
+
+        .bottom {
+            transform: translateY(-11px)translateX(0)rotate(45deg);
+            background: color-active;
+        }
+
+        span {
+            background: color-main;
+            border: none;
+            height: 5px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all.35s ease;
+            cursor: pointer;
+        }
+
+        div:nth-of-type(2) {
+            top: 11px;
+        }
+
+        div:nth-of-type(3) {
+            top: 22px;
+        }
+
+        .fullscreen {
+            position: fixed;
+            background: color-main;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity.35s, visibility.35s, height.35s;
+            overflow: hidden;
+        }
+
+        .open {
+            opacity: .9;
+            visibility: visible;
+            height: 100%;
+        }
+
+        li {
+            animation: fadelnRight.5s ease forwards;
+            animation-delay: .35s;
+            display: block;
+            height: 25%;
+            height: calc(100%/4);
+            min-height: 50px;
+            position: relative;
+            opacity: 0;
+        }
+
+        a {
+            display: block;
+            position: relative;
+            color: color-link;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        div:hover::after,
+        div:focus::after,
+        div:active::after {
+            width: 100%;
+        }
+
+        div::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0%;
+            transform: translateX(-50%);
+            height: 3px;
+            background: color-link;
+            transition: .35s;
+        }
+
+        @keyframes fadeinRight {
+            0% {
+                opacity: 0;
+                left: 20%;
+            }
+
+            100% {
+                opacity: 1;
+                left: 0;
+            }
+        }
+
+        div:nth-of-type(2) {
+            animation-delay: .4s;
+        }
+
+        div:nth-of-type(3) {
+            animation-delay: .45s;
+        }
+
+        div:nth-of-type(4) {
+            animation-delay: .50s;
+        }
+
+        nav {
+            position: relative;
+            height: 70%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            font-family: 'Vollkorn', serif;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            display: inline-block;
+            position: relative;
+            height: 100%;
+        }
+
+        h4 {
+            display: block;
+            text-align: center;
+        }
+
+        .story {
+            width: 500px;
+            height: 50px;
+            background: none;
+            position: fixed;
+            right: 20px;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header" style="height: 151px;">
+        <h1>
+            <img src="./스크린샷 2023-12-27 235524.png" alt="" width="1700px">
+            <!-- <img src="../form.html/스크린샷 2023-12-26 223100.png" alt="빕스" style="width: 1590px;"> -->
+        </h1>
+        <div class="btn_container" id="toggle">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+        </div>
+        <div class="fullscreen" id="fullscreen">
+            <nav class="fullscreen-menu">
+                <ul>
+                    <span><a href="">STEAK</a></span>
+                    <li><a href="">SALAD BAR</a></li>
+                    <li><a href="">STORE </a>
+                    <li><a href="">EVENT</a></li>
+                    <li><a href="">BENEFIT</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="img2" style="height: 151px;">
+            <h2>
+                <!-- <img src="../form.html/h1_vips.png" alt=""> -->
+            </h2>
+            <h3>
+
+                <img src="../form.html/스크린샷 2023-12-26 225454.png" alt="">
+
+            </h3>
+            <div class="vips-story">
+                <!-- <h4>VIPS</h4> -->
+            </div>
+            <div id="content-wrap" class="vips-story">
+            </div>
+            <div class="vips-story">
+                <div class="hidden"></div>
+                <div>
+
+                </div><!-- div로 구분짓는거 숙지, flex 방향주는거 숙지  -->
+
+                <div class="story">
+                    <h4>Premium Steak & Seasonal Salad Bar</h4>
+                    <dd>
+                        "빕스는 고급 스테이크 하우스에서만 맛볼 수 있던 프리미엄 스테이크와 계절마다"<br>
+                        "변하는 다채롭고 신선한 샐러드바로 국내 외식 업계를 선도해왔습니다."<br>"다양한 프리미엄 스테이크는 물론,"<br>
+                        "스테이크와 잘 어울리는 풍성한 샐러드바와 와인&페어링 존으로"<br>"고객에게 특별한 외식 경험을 선사하며 우리나라
+                        의 NO.1 패밀리 레스토랑으로 사랑받고 있습니다."
+                    </dd>
+                    <dt>
+                        다채롭고 새로운 스태이크와 샐러드바
+                    </dt>
+                    <dd>
+                        "포터하우스, 토마호크 같은 최상급 부위로 즐기는 프리미엄 스테이크부터 시그니처 얌스톤 위에서 생동감 있는 시즐링과"<br>
+                        "취향에 맞는 굽기로 즐기는 서로인, 텐더로인 스테이크까지 다양한 스테이크를 즐기실 수 있고 시즌별로 새로운 테마의 전문성
+                        있는"<br>"조닝 구성의 다채로운 샐러드바로 풍성한 메뉴 경험을 제공합니다."
+                    </dd>
+                    <dt>
+                        "고품질의 서비스와 고급스럽고 세련된 공간"
+                    </dt>
+                    <dd>
+                        "신선한 재료와 좋은 음식 품질로 최상의 서비스를 제공하고자 노력하며 고급 식문화인 와인과 푸드를 선사하고자"<br>"와인&페어링
+                        존을 도입하여 점점 확산하며 프리미엄 전략에 박차를 가하고 있습니다. 인테리어 또한 호텔 라운지와 같은 고급스럽고"<br>"세련된
+                        분위기로 업그레이드 하여 특별한 다이닝 공간을 선사합니다."
+                    </dd>
+                    </dl>
+                    <ul class="vips img">
+
+                        <div class="wrapper"><img src="./스크린샷 2023-12-27 003337.png" alt=""></div>
+                        <div class="wrapper"><img src="./스크린샷 2023-12-26 231418.png" alt=""></div>
+                        <div class="wrapper"><img src="./스크린샷 2023-12-26 231451.png" alt=""></div>
+                        <div class="wrapper"><img src="./스크린샷 2023-12-26 231523.png" alt=""></div>
+                </div>
+            </div>
+
+
+</body>
+
+</html>
