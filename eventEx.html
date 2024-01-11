@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventEx</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            width: 700px;
+            float: left;
+        }
+        div{
+            width: 150px;
+            float: left;
+        }
+
+    </style>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(function () {
+            $("section > div").eq(0).click(function () {
+                $("section > div").eq(4).css({ backgroundColor: "#f00" })
+            })
+        })
+
+        $(function () {
+            $("section > div").eq(1).mouseover(function () {
+                $("section > div").eq(5).css({boxShadow:"5px 3px 4px"})
+            })
+        })
+
+        $(function () {
+            $("section > div").eq(2).mouseout(function () {
+                $("section > div").eq(6).css({opacity: "0.5"})
+            })
+        })
+
+        $(function () {
+            $("section > div").eq(3).mouseup(function () {
+                $("section > div").eq(7).css({transform:"rotate(90deg)"})
+            })
+        })
+        
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1>eventEx</h1>
+    <section>
+        <div>
+            <img src="../fff/balloon/01.png" alt="">
+        </div>
+
+        <div>
+            <img src="../fff/balloon/02.png" alt="">
+        </div>
+
+        <div>
+        <img src="../fff/balloon/03.png" alt="">
+        </div>
+
+        <div>
+            <img src="../fff/balloon/04.png" alt="">
+        </div>
+
+        <div>
+        <img src="../fff/balloon/05.png" alt="">
+        </div>
+
+        <div>
+            <img src="../fff/balloon/06.png" alt="">
+        </div>
+
+        <div>
+            <img src="../fff/balloon/07.png" alt="">
+        </div>
+
+        <div>
+            <img src="../fff/balloon/08.png" alt="">
+        </div>
+    </section>
+</body>
+
+</html>
