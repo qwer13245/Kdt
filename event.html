@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+
+        section , #rrr{
+            width:500px;
+            height: 250px;
+            background-color: #ff0;
+            margin: 5px;
+            float: left;
+        }
+        section > div, #rrr > div{
+            width:80px;
+            height: 80px;
+            float: left;
+            margin: 5px;
+            border: 1px solid #aaa;
+        }
+        #con{
+            width:600px;
+            border: 1px solid #aaa;
+            margin: 5px;
+            
+        }
+
+        
+    </style>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $("section > div").eq(0).click(function(){
+                $(this).css({color:"#f00"})
+            })
+            $("section > div").on("click",function(){
+
+                //eq()  :: 배열에서 몇번째를 가져와라
+                //index() :: 내가 배열에서 몇번째냐
+                $("#rrr > div").eq($(this).index()).css({backgroundColor:"#f00"})
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>event</h1>
+    <section>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </section>
+    <div id="rrr">
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    <input type="text">
+    <input type="text">
+    <select name="" id="">
+        <option>네이버</option>
+        <option>구글</option>
+        <option>다음</option>
+        <option>인스타</option>
+    </select>
+    
+    <div id="con"/>
+</body>
+</html>
