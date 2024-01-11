@@ -23,6 +23,7 @@
             float: left;
             margin: 5px;
             border: 1px solid #aaa;
+            overflow: auto;
         }
         #con{
             width:600px;
@@ -74,6 +75,41 @@
                     log("hover -> out 여 4")
                 }
             )
+            $("section > div").eq(5).hover(
+                function(){
+                    log("hover -> over, out 여 5")
+                }
+            )
+            $("section > div").eq(6).mouseover(function(){
+                log("mouseover 이여 6")
+            }).mouseout(function(){
+                log("mouseout 이여 6")
+            })
+            $("section > div").eq(7).mousemove(function(e){
+                log("mousemove 이여 7 : "+e.pageX+","+e.pageY)
+            })
+
+            $("section > div").eq(8).scroll(function(){
+                log("scroll 이여 8 : "+$(this).scrollLeft()+","+$(this).scrollTop())
+            })
+            $("input:first-of-type").keydown(function(e){
+                log("keydown 이여  : "+e.keyCode)
+            }).on("keyup", function(e){
+                log("keyup 이여  : "+e.keyCode)
+            })
+
+            $("input:last-of-type").focus(function(){
+                log("focus 여  : ")
+            }).on("blur", function(){
+                log("blur 여  : ")
+            })
+            $("select").on("change",function(){
+                log("change 여  : "+$(this).val())
+            })
+
+            $(window).on("resize",function(e){
+                log("resize 여  : "+$(this).width()+","+$(this).height())
+            })
         })
     </script>
 </head>
@@ -88,7 +124,9 @@
         <div>5</div>
         <div>6</div>
         <div>7</div>
-        <div>8</div>
+        <div>8
+            <img src="../basic/div.html/a01.jpg" alt="">
+        </div>
         <div>9</div>
     </section>
     <div id="rrr">
