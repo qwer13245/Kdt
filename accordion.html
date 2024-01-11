@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버거킹</title>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body {
+    margin: 0;
+    overflow-x: hidden;
+    }
+
+    .menu-bar {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    margin: 5px;
+    border: 1px solid #ccc;
+    
+    }
+
+    .menu-item {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    }
+
+    .content-container {
+    display: flex;
+    width: 400%;
+    overflow: hidden;
+    }
+
+    .content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    }
+
+    h2 {
+    color: #333;
+    }
+  </style>
+  <script src="../fff/js/jquery-3.7.1.min.js"></script>
+  <script>
+
+    $(document).ready(function() {
+
+    $(".menu-item").click(function() {
+    var contentId = $(this).data("content");
+
+    // 현재 표시된 컨텐츠 숨기기
+    $("content-container > #BurgerKing").hide();
+
+    // 클릭한 메뉴에 해당하는 컨텐츠 보이기
+    $("content-container > #BurgerKing" + contentId).show();
+
+    // 애니메이션
+    $(".content-container").animate({
+      marginLeft: "-" + $("#" + contentId).index() * 100 + "%"
+    });
+
+    // 현재 메뉴
+    $(".menu-item").removeClass("active");
+    $(this).addClass("active");
+  });
+});
+  </script>
+</head>
+<body>
+
+  <div class="menu-bar">
+    <div class="menu-item" data-content="content-store">메뉴 소개</div>
+    <div class="menu-item" data-content="content-menu">매장 소개</div>
+    <div class="menu-item" data-content="content-event">이벤트</div>
+    <div class="menu-item" data-content="content-contact">브랜드 스토리</div>
+  </div>
+
+  <div class="content-container">
+
+    <div class="content" id="BurgerKing">
+
+      <h2>메뉴 소개</h2>
+      <div>스페셜&할인팩<br />신제품(NEW)<br />프리미엄<br />
+      와퍼&주니어<br />치킨&슈림프버거<br />올데이킹&킹모닝<br />
+      사이드<br />음료&디저트</div>
+    </div>
+
+    <div class="content" id="content-menu">
+      <h2>매장소개</h2>
+      <div>매장찾기</div>
+
+    </div>
+
+    <div class="content" id="content-event">
+      <h2>이벤트</h2>
+      <div>이벤트</div>
+    </div>
+
+    <div class="content" id="content-contact">
+      <h2>브랜드 스토리</h2>
+      <div>BRAND<br />WHOPPER<br />COMM.</div>
+    </div>
+  </div>
+</body>
+</html>
