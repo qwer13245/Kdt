@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+
+        section{
+            width: 700px;
+            height: 600px;
+            border: 1px solid #aaa;
+        }
+        #reg > input,  .student > input{
+            width: 50px;
+          
+        }
+
+        section > .student{
+            width: 600px;
+            height: 30px;
+            background-color: #ffa;
+            margin: 10px;
+            padding:10px;
+        }
+    </style>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        var no  = 0
+        var arr = {}
+
+        //입력부
+        function stInit(){
+            var st = {
+                    no : no,
+                    pname : $('<input type="text" />'),
+                    jum : [], 
+                    rank : $('<input type="text" readonly/>'),
+                    tot : $('<input type="text" readonly/>'),
+                    avg : $('<input type="text" readonly/>')
+                }
+                st.pname.val($("#reg > #pname").val()) 
+
+                $("#reg > #pname").val("정성"+(no+1))
+                for (let i = 0; i < 3; i++) {
+                    var ej = $('<input type="text"  />')
+                    ej.prop("readonly",true) 
+                    ej.val(eval($("#reg > .jum").eq(i).val()))
+                    st.jum.push(ej)
+
+
+                    $("#reg > .jum").eq(i).val(Math.floor(Math.random()*50+50) )
+                }
+                return st
+        }
+
+        //연산부
+        function calc(stud){
+            let tot = 0
+            for (const ej of stud.jum) {
+                tot += eval(ej.val())
+            }
+
+            stud.tot.val(tot)
+            stud.avg.val(parseInt(tot/stud.jum.length) )
+        }
+
+        function rankCalc(){
+            for (const m in arr) {
+                var me = arr[m]
+                let rank = 1
+                for (const you in arr) {
+                    if(eval(me.avg.val()) < eval(arr[you].avg.val())){
+                        rank ++
+                    }
+                
+                }
+                me.rank.val(rank)
+            }
+        }
+
+        //출력부
+        function stHtml(st){
+
+            st.htmlTAG = $("<div class = student></div>")
+            st.pname.prop("readonly",true) //javascript의 property
+            st.htmlTAG.append(st.pname)
+
+            for (const ej of st.jum) {
+                
+                st.htmlTAG.append(ej)
+            }
+            st.htmlTAG.append(st.tot)
+            st.htmlTAG.append(st.avg)            
+            st.htmlTAG.append(st.rank)
+
+            var delBtn = $('<button>삭제</button>')
+            delBtn.on("click", function(){
+                st.htmlTAG.remove()
+                delete arr[st.no]
+                console.log(arr)
+            })
+            st.htmlTAG.append(delBtn)
+
+            var modifyBtn = $('<button>수정</button>')
+
+            modifyBtn.on("click", function(){
+
+                if($(this).html()=="수정"){
+
+                    st.pname.prop("readonly",false)
+                    for (const ej of st.jum) {
+                        ej.prop("readonly",false)
+                    }
+                    $(this).html("수정완료")
+
+                }else{
+                    st.pname.prop("readonly",true)
+                
+                    for (const ej of st.jum) {
+                        ej.prop("readonly",true)
+                    }
+
+                    calc(st)
+                    rankCalc()
+
+                    console.log(st)
+                    $(this).html("수정")
+                }
+                
+            })
+
+            st.htmlTAG.append(modifyBtn)
+        }
+
+
+        $(function(){
+            $("#reg > button").on("click",function(){
+                
+                var st = stInit()
+                calc(st)
+
+                arr[no]=st
+
+                rankCalc()
+
+                no++
+                stHtml(st)
+                $("section").append(st.htmlTAG)
+                console.log(arr)
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>exam</h1>
+    <div id="reg">
+        <input type="text" id="pname" value="정성"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <input type="text" class="jum"/>
+        <button>추가</button>
+    </div>
+    <section>
+        
+    </section>
+</body>
+</html>
