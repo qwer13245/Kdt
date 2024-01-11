@@ -36,6 +36,11 @@
     <script src="../fff/js/jquery-3.7.1.min.js"></script>
     <script>
         $(function(){
+            function log(ttt){
+                $("#con").html($("#con").html()+ttt+"<br/>")
+            }
+
+
             $("section > div").eq(0).click(function(){
                 $(this).css({color:"#f00"})
             })
@@ -45,6 +50,30 @@
                 //index() :: 내가 배열에서 몇번째냐
                 $("#rrr > div").eq($(this).index()).css({backgroundColor:"#f00"})
             })
+            $("section > div").eq(1).mousedown(function(){
+                log("mousedown 이여 1")
+            })
+            $("section > div").eq(2).on("mousedown",function(){
+                log("mousedown 이여 2")
+            })
+
+            $("section > div").eq(2).on("mouseup",function(){
+                log("mouseup 이여 2")
+            })
+
+            $("section > div").eq(3).on("mousedown",function(){
+                log("mousedown 이여 3")
+            }).on("mouseup",function(){
+                log("mouseup 이여 3")
+            })
+            $("section > div").eq(4).hover(
+                function(){
+                    log("hover -> over 여 4")
+                },
+                function(){
+                    log("hover -> out 여 4")
+                }
+            )
         })
     </script>
 </head>
