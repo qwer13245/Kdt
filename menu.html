@@ -61,6 +61,10 @@
     </style>
     <script src="../fff/js/jquery-3.7.1.min.js"></script>
     <script>
+        /*
+         문제 : 메뉴 버튼을 눌렀을때 하위 메뉴가 늘어난거를 
+                줄어들게 해주세요
+        */
         var cnt = [3,4,3,4]
         $(function(){
                 $("nav > .main > .title").on("click", function(){
@@ -71,6 +75,39 @@
                     $("nav > .main").stop().animate({
                         height: "42px"
                     }, 1000) 
+
+                $("nav > .main > .title").on("click", function(){
+
+                    var dataClose = eval($(this).attr("data-close"))
+
+                    $("nav > .main > .title > .sub").attr("data-close","true")
+                    $("nav > .main").stop().animate({
+                        height: "42px"
+                    }, 1000)
+
+                    if(dataClose){
+                        hh = 31
+                    }
+                    $(this).attr("data-close", !dataClose)
+                    $(this).parent().stop().animate({
+                        height: hh + "px"
+                    }, 1000)
+                })
+                
+                $("nav > .main > .sub").on("mousedown", function(){
+                    $("nav > .main > .sub > div").animate({width:"1px"}, 1000)
+                })
+                
+                
+                // $("nav > .main > .title").on("click", function(){
+
+                //     var dataClose = eval($(this).attr("data-close"))
+
+                //     $("nav > .main > .title").attr("data-close", "true")
+                //     $("nav > .main").stop().animate({
+                //         height: "1px"
+                //     }, 1000)
+                // })
                     
 
                     //console.log($(this).parent().index())
@@ -86,13 +123,50 @@
                         height: hh+"px"
                     }, 1000) 
                     
-                    
+
+                    // if(dataclose){
+                    //     hh = 31
+                    // }
+                    // $(this).attr("data-close", !dataclose)
+
+                    // $(this).parent().stop().animate({
+                    //     height: hh + "px"
+                    // }, 1000)
+                    // if(dataclose){
+                    //     hh = 31
+                    // }
+                    // $(this).attr("data-close", !dataClose)
+
+                    // $(this).parent().stop().animate({
+                    //     height: hh + "px"
+                    // }, 1000)
                 })
+                    // if(dataClose){
+                    //     hh = 31
+                    // }
+                    // $(this).attr("data-close", !dataclose)
+
+                    // $(this).parent().stop().animate({
+                    //     width: hh+"px"
+                    // }, 1000)
 
 
                 $("nav > .main > .sub").on("click", function(){
                     $("nav > .main > .sub > div").animate({width:"471px"}, 1000)
                 })
+
+                // $("nav > .main > .sub").on("mousedown", function(){
+                //     $("nav > .main > .sub > div").animate({width:"1px"}, 1000)
+                // })
+                // console.log($("nav > .main > .sub"))
+                // $("nav > .main > .sub").on("click", function(){
+                //     $("nav > main > .sub > div").animate({width:"150px"}, 1000)
+                // })
+                // $("nav > .main > .sub").on("click", function(){
+                //     $("nav > .main > .sub > div").animate({width:"1px"},1000)
+                // })
+
+                
         })
     </script>
 </head>
