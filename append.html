@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        
+        section{
+            border: 1px solid #333;
+            width:300px;
+            height: 300px;
+            background-color: #0ff;
+        }
+        div{
+            border: 1px solid #333;
+            width:200px;
+            height: 24px;
+            background-color: #ff0;
+        }
+        
+    </style>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <script>
+        
+        $(function(){
+            $("section").append("fewfefwe")
+            $("section").append("<div>append</div>")
+            $("section").prepend("<div>prepend</div>")
+            $("<div>appendTo</div>").appendTo("section")
+            $("<div>prependTo</div>").prependTo("section")
+
+            $("section").after("<div>after</div>")
+            $("section").before("<div>before</div>")
+            $("<div>insertAfter</div>").insertAfter("section")
+            $("<div>insertBefore</div>").insertBefore("section")
+
+            var aaa = $("<div>aaa</div>")
+            $("section").append(aaa)
+            $("section").prepend(aaa)   //이미 존재하는 요소를 추가하면 이동으로 처리
+            var bbb = aaa.clone()       //새로운 요소로 복제
+            $("section").after(bbb)     //복제된 요소 추가
+            aaa.remove()
+        })
+</script>
+</head>
+<body>
+    <h1>append</h1>
+    <section/>
+</body>
+</html>
