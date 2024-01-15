@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regexlogin</title>
+</head>
+<body>
+    <script>
+       /* 회원 가입 유효성 검사를 실시하세요
+
+       1. 아이디, 영문 숫자 조합
+       2. 비번, 비번확인
+       3. 이메일, 아이디,영문,숫자 @ 도메인, 영문 점
+       4. 전화번호, 숫자, ###-####-####, ##(#)-###-####
+       5. 이름, 한글만 가능
+       6. 주민번호
+
+       */
+        var logArr = [
+            "asdf","qwer1235","erty574","teweda74r23","apesddl1343","asdf@naver.com",
+            "qwer635@daum.net","zxcv124@gmail.com","010-1234-5678","01(1)-1434-7464",
+            "김광현","선s동열","심창w민","이종범","이q승엽","123456-789012","234234-646434",
+        ]
+
+        var chkArr = [
+            /[a-z]/, //출력확인용 
+            /^\w+$/, //아이디 - 영문, 숫자 조합
+            /[a-z]{3,7}[0-9]+$/,//비번
+            /[a-z]{3,5}[0-9]+$/,//비번확인
+            /[a-z][0-9]+@[a-z]./, //이메일 - 영문,숫자 @ 도메인, 영문 점
+            /^[0-9]+-[0-9]{3}/, //전화번호 
+            /^[가-힣]+$/, //이름
+            /^[0-9]+-[0-9]{6}/ //주민번호
+            
+            // /^[0-9]/, //숫자 포함
+            // /^[0-9]+-[0-9]./
+            // /^[0-9]+$/,
+            // /^[0-9]{0,12}+$/
+            // /^[0-9]{13}*$/
+            // /[0-9]{13}+$/g,
+            // /^[0-9]{12}+$/
+            // /^[0-9]{0,7}+$/,
+            // /^[0-9]{7}-[0-9]{7}+$/ //주민번호
+            // /^[a-z][0-9]$/
+            // /^[a-z][0-9]@[a-z]+$/
+            // /^[\w][\d]{7}+$/,
+            // /^\w\d{5,7}$/
+            // /^[a-z][0-9]{5,7}$/
+            // /[a-z][0-9]{7}$/
+            // /^[a-z][0-9]/,
+            // /^[a-z][0-9]{8}/,
+            // /^[a-z][0-9]{8}@[a-z].[a-z]{9}/,
+            // /^[0-9]{3}[0-9]{4}[0-9]{4}[0-9](#){3}[0-9]{3}[0-9]{4}/
+        ]
+        // console.log(/^[a-z][0-9]{5,7}$/)
+        for(const lg of chkArr){
+            document.write(lg + " : ")
+
+            for(const chk of logArr){
+                if(lg.test(chk)){
+                    document.write(chk + " , ")
+                }
+            }
+            
+            document.write("<br/>")
+        }
+        // $(function(){ // $(function(){}) if문으로 정규식 검사가 가능하다면
+        /*
+            $(function(){
+                if(/^\w+$/.test("erty574")){
+                    document.write(/^\w+$/.test("erty574")+"<br/>")
+                }else{
+                    alert("아이디 오류")
+                }
+            
+                if(/[a-z]{3,7}[0-9]+$/.test("teweda74r23")){
+                    document.write(/[a-z]{3,7}[0-9]+$/.test("teweda74r23")+"<br/>")
+                }else if(/[a-z]{3,5}[0-9]+$/.test("erty574")){
+                    document.write(/[a-z]{3,5}[0-9]+$/.test("erty574")+"<br/>")
+                }else{
+                    alert("비밀번호 오류")
+                }
+
+                if(/[a-z][0-9]+@[a-z]./.test("asdf@naver.com")){
+                    document.write(/[a-z][0-9]+@[a-z]./.test("zxcv124@gmail.com")+"<br/>")
+                }else{
+                    alert("이메일 오류")
+                }
+
+                if(/^[0-9]+-[0-9]{3}/.test("010-1234-5678")){
+                    document.write(/^[0-9]+-[0-9]{3}/.test("010-1234-5678")+"<br/>")
+                }else{
+                    alert("전화번호 오류")
+                }
+
+                if(/^[가-힣]+$/.test("이종범")){
+                    document.write(/^[가-힣]+$/.test("이종범")+"<br/>")
+                }else{
+                    alert("이름 오류")
+                }
+
+                if(/^[0-9]+-[0-9]{6}/.test("123456-789012")){
+                    document.write(/^[0-9]+-[0-9]{6}/.test("123456-789012")+"<br/>")
+                }else{
+                    alert("주민번호 오류")
+                }
+            }
+        */
+        //     if(lg==true){
+        //         document(lg + ":")
+        //     }else{
+        //         alert("아이디 오류")
+        //     }
+        // })
+        //     if(/^\w{5}/){
+        //         document.write(lg + " : ")
+        //     }else{
+        //         alert("아이디 다시 확인")
+        //     }
+
+
+        document.write(/^\w+$/.test("erty574")+"<br/>")
+        document.write(/[a-z]{3,7}[0-9]+$/.test("teweda74r23")+"<br/>")
+        document.write(/[a-z]{3,5}[0-9]+$/.test("erty574")+"<br/>")
+        document.write(/[a-z][0-9]+@[a-z]./.test("asdf@naver.com")+"<br/>")
+        document.write(/[a-z][0-9]+@[a-z]./.test("zxcv124@gmail.com")+"<br/>")
+        document.write(/^[0-9]+-[0-9]{3}/.test("010-1234-5678")+"<br/>")
+        document.write(/^[가-힣]+$/.test("이종범")+"<br/>")
+        document.write(/^[0-9]+-[0-9]{6}/.test("123456-789012")+"<br/>")
+
+         /* 회원 가입 유효성 검사를 실시하세요
+
+       1. 아이디, 영문 숫자 조합
+       2. 비번, 비번확인
+       3. 이메일, 아이디,영문,숫자 @ 도메인, 영문 점
+       4. 전화번호, 숫자, ###-####-####, ##(#)-###-####
+       5. 이름, 한글만 가능
+       6. 주민번호
+
+       */
+    </script>
+</body>
+        <h1>regexlogin</h1>
+        <form action="">
+            <fieldset>
+                <legend>아이디</legend>
+                <input type="text" name="" id="userid">
+            </fieldset>
+
+            <fieldset>
+                <label><legend>비밀번호</legend><input type="text" name="" id="pw" maxlength="8"></label>
+                <button>비밀번호 중복확인</button>
+                <!-- <script>
+                    document.write(/[a-z]{3,5}[0-9]+$/.test("erty574")+"<br/>")
+                </script> -->
+            </select>
+            </fieldset>
+
+            <fieldset>
+                <label><legend>이메일</legend><input type="text" name="" id="email" maxlength="8">@</label>
+            <select name="phone" id="">
+                <option>naver.com</option>
+                <option>daum.net</option>
+                <option>gmail.com</option>
+                <option>nate.net</option>
+            </select>
+            </fieldset>
+
+            <fieldset>
+                <label><legend>전화번호</legend><input type="text" name="" id="phonenumber" maxlength="11"></label>
+            </fieldset>
+
+            <fieldset>
+                <label"><legend>이름</legend><input type="text" name="" id="username"></label>
+            </fieldset>
+
+            <fieldset>
+                <label><legend>주민번호</legend><input type="text" name="" id="registnumber"></label>
+            </fieldset>
+            
+            <fieldset>
+                <button align="button">가입</button>
+            </fieldset>
+        </form> 
+        <!-- <div id="id">qwer123</div>
+        <div id="pw">erty574</div>
+        <div id="pwchk">qwer1235</div>
+        <div id="email">asdf@naver.com</div>
+        <div id="phonenumber">010-1234-5678<br/>01(1)-1434-7464</div>
+        <div id="name">김광현<br/>이종범</div>
+        <div id="registnumber">123456-789012</div> -->
+</html>

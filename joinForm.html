@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>joinForm</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+    </style>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <script>
+
+       
+
+        $(function(){
+            $("#submitBtn").on("click",function(){
+                //alert("눌렀냐")
+                //alert(frm.pid.value)  //둘다 접근가능
+                //alert($(frm.pid).val()) 둘다 접근가능
+                /*
+                if(!/^[]{}$/.test($(frm.).val())){
+                    alert("")
+                    $(frm.).val("")
+                    $(frm.).focus()
+                    return false //submit 하지 않기
+                }
+                */
+
+                
+ /* 
+        회원 가입 유효성 검사를 실시하세요
+        1. 아이디 : 영문 숫자 조합
+        2. 비번 , 비번확인 
+        3. 이메일  -  아이디:영문,숫자   @  도메인 : 영문 점
+        4. 전화번호 - 숫자 :  ###-####-####,   ##(#)-###-####
+        5. 이름 (한글만 가능)
+        6. 주민번호  */
+                var arr = [
+                    //{pp:/^.{3,}$/, target:frm.pw , msg:"암호에러"},
+                    {pp:/^[a-z0-9]{3,}@[a-z.]{5,}$/i, target:frm.email , msg:"이메일에러"},
+                    {pp:/^((\d{3}-\d{4})|(\d{2,3}-\d{3}))-\d{4}$/, target:frm.tel , msg:"전화에러"},
+                    {pp:/^[가-힣]{2,}$/, target:frm.pname , msg:"이름에러"},
+                    {pp:/^[0-9]{6}-[0-9]{7}$/, target:frm.jumin , msg:"주민번호에러"}
+                ]
+
+                if(!/^[a-z0-9]{3,7}$/i.test($(frm.pid).val())){
+                    alert("아이디 에러")
+                    $(frm.pid).val("")
+                    $(frm.pid).focus()
+                    return false //submit 하지 않기
+                }
+
+                if(!(
+                    /^[a-z0-9!@#$%&]{5,7}$/i.test($(frm.pw).val()) &&
+                    /[0-9]/.test($(frm.pw).val()) &&
+                    /[a-z]/.test($(frm.pw).val()) &&
+                    /[A-Z]/.test($(frm.pw).val()) &&
+                    /[!@#$%&]/.test($(frm.pw).val())
+                )){
+                    alert("암호 에러")
+                    $(frm.pw).val("")
+                    $(frm.pw).focus()
+                    return false //submit 하지 않기
+                }
+
+                if($(frm.pw).val()!=$(frm.pw2).val()){
+                    alert("암호확인 에러")
+                    $(frm.pw2).val("")
+                    $(frm.pw2).focus()
+                    return false //submit 하지 않기
+                }
+
+                for (const chk of arr) {
+                    if(!chk.pp.test($(chk.target).val())){
+                        alert(chk.msg)
+                        $(chk.target).val("")
+                        $(chk.target).focus()
+                        return false //submit 하지 않기
+                    }
+                }
+                
+                
+
+               // return false    //submit 하지 않기
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>joinForm</h1>
+    <form name="frm" action="joinReg.html">
+        <fieldset>
+            <label >
+                <div>아이디</div>
+                <input type="text" name="pid">
+            </label>
+        </fieldset>
+        <fieldset>
+            <label >
+                <div>비번</div>
+                <input type="text" name="pw">
+            </label>
+        </fieldset>
+        <fieldset>
+            <label >
+                <div>비번확인</div>
+                <input type="text" name="pw2">
+            </label>
+        </fieldset>
+        <fieldset>
+            <label >
+                <div>이메일</div>
+                <input type="text" name="email">
+            </label>
+        </fieldset>
+        <fieldset>
+            <label >
+                <div>전화번호</div>
+                <input type="text" name="tel">
+            </label>
+        </fieldset>
+        <fieldset>
+            <label >
+                <div>이름</div>
+                <input type="text" name="pname">
+            </label>
+        </fieldset>
+        <fieldset>
+            <label >
+                <div>주민번호</div>
+                <input type="text" name="jumin">
+            </label>
+        </fieldset>
+        <fieldset>
+                <input type="submit" value="가입" id="submitBtn">
+        </fieldset>
+    </form>
+</body>
+</html>
