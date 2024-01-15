@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 1500px;
+            
+        }
+
+        #bbackcoffie {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            margin-left: 300px;
+            color: #fff;
+            transition: left 0.3s;
+            
+        }
+
+        #menu {
+            margin-left: 300px;
+          
+        }
+    </style>
+    <script src="../fff/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+
+                if (scroll > 200) {
+                    console.log(scroll > 200) 
+                    $("#menu").css("left", "0");
+                    console.log($("#menu").css("left", "0"))  
+                } else {
+                    $("#menu").css("left", "-200px"); 
+                    console.log($("#menu").css("left", "-200px"))
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="bbackcoffie">
+        <ul>
+            <li><a href="#">커피주문</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </div>
+
+    <div id="menu">
+        <h1>커피 주문</h1>
+        <p>에스프레소</p>
+        <p>아메리카노</p>
+        <p>카페 비엔나</p>
+        <p>카푸치노</p>
+        <p>카페모카</p>
+    </div>
+
+</body>
+
+</html>
