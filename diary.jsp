@@ -10,10 +10,10 @@
 <style>
 	img{
 		width: 300px;
-		height: 300px;
+		height: 200px;
 	}
 	.now{
-	background-color : #ff0
+		background-color: #ff0;
 	}
 </style>
 </head>
@@ -32,27 +32,27 @@
 
 <table border="">
 	<tr>
-		<td colspan="7"></td>
-		<img src="../fff/옷1.jpg" alt=""/>
-	   	</td>
-	</tr>
-	<tr>
-		<td colspan="7"></td>
-		<h2><%=title%></h2>
+		<td colspan="7">
+			<img src="../fff/child_1.jpg" alt="" />
 		</td>
 	</tr>
 	<tr>
-	<%
-	for(int i = 1; i < first; i++){
-		out.println("<td></td>");
-	}
-	%>
-	<% for(char ch : "일월화수목금토".toCharArray()){%>
-		<td><%=ch%></td>
-	<%}%>
+		<td colspan="7">
+			<h2><%=title %></h2>
+		</td>
 	</tr>
 	<tr>
-	<% for(int i = 1; i <= last; i++) {
+	<% for(char ch : "일월화수목금토".toCharArray()) {%>
+		<td><%=ch %></td>
+	<%} %>	
+	</tr>
+	<tr>
+	<%
+	for(int i = 1; i < first; i++) {
+		out.println("<td></td>");
+	}
+	
+	for(int i = 1; i <= last; i++) {
 		today.set(Calendar.DATE, i);
 		String nowCSS = "";
 		
@@ -61,12 +61,10 @@
 		}
 	%>
 		<td <%=nowCSS %>><%=i %></td>
-	   
-	<%
-	if(today.get(Calendar.DAY_OF_WEEK)==7){%>
+	<% 
+		if(today.get(Calendar.DAY_OF_WEEK)==7){ %>
 			</tr><tr>
-		
-	<% }} %>
+	<%	}} %>
 	</tr>
 </table>
 </body>
