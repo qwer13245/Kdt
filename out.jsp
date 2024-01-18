@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" buffer="8kb" autoFlush="false"%>
+    pageEncoding="UTF-8" buffer="8kb"  autoFlush="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 <body>
 <h1>out</h1>
 
-버퍼크기,    버퍼남은 양<br/>
+버퍼크기,    버퍼남은 양 <br/>
 <%=out.getBufferSize() %>,<%=out.getRemaining() %><br/>
 나는 무너, 꿈을 꾸는 무너<br/>
 <%=out.getBufferSize() %>,<%=out.getRemaining() %><br/>
@@ -26,10 +26,10 @@
 <%=jw.getBufferSize() %>,<%=jw.getRemaining() %><br/>
 <%=jw2.getBufferSize() %>,<%=jw2.getRemaining() %><br/>
 <% 
-//out.flush(); //버퍼 내용 전송후 버퍼 갱신
-out.clear();   //버퍼 내용 모두 지움 버퍼 갱신
-%> 
+//out.flush();  //버퍼 내용 전송후 버퍼 갱신
+out.clear();	//버퍼 내용 모두 지움 버퍼 갱신
+%>
 <%=out.getBufferSize() %>,<%=out.getRemaining() %><br/>
-야야이 아아 야 야이이 야
+야야이 야아 야 야이이 야
 </body>
 </html>

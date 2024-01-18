@@ -38,8 +38,10 @@ page2.getServletConfig() : <%=page2.getServletConfig() %><br/>
 
 <%=this.getInitParameter("fork")%><br/>
 <%=this.getInitParameter("xpoweredBy")%><br/>
-<%-- <%=page2.getInitParameter("fork")%><br/> --%>
-<%-- <%=page2.getInitParameter("xpoweredBy")%><br/> --%>
-<%-- <%=page.getInitParameter("fork")%><br/> --%>
-<%-- <%=page.getInitParameter("xpoweredBy")%><br/> --%>
+<%-- 
+<%=page2.getInitParameter("fork")%><br/>
+<%=page2.getInitParameter("xpoweredBy")%><br/>
+<%=page.getInitParameter("fork")%><br/>
+<%=page.getInitParameter("xpoweredBy")%><br/> 
+--%>
 </html>

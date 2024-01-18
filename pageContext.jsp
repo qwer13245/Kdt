@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"% isErrorPage="true"%>
+    pageEncoding="UTF-8" isErrorPage="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,33 +9,34 @@
 <body>
 <h1>pageContext</h1>
 <%
-	PageContext pc = pageContext; 
+	PageContext pc = pageContext;
 %>
 <%=page %><br/>
 <%=pageContext.getPage() %><br/>
-<hr/>
+<hr />
 <%=request %><br/>
 <%=pageContext.getRequest() %><br/>
-<hr/>
+<hr />
 <%=response %><br/>
 <%=pageContext.getResponse() %><br/>
-<hr/>
+<hr />
 <%=session %><br/>
 <%=pageContext.getSession() %><br/>
-<hr/>
+<hr />
 <%=application %><br/>
 <%=pageContext.getServletContext() %><br/>
-<hr/>
+<hr />
 <%=out %><br/>
 <%=pageContext.getOut() %><br/>
-<hr/>
+<hr />
 <%=config %><br/>
 <%=pageContext.getServletConfig() %><br/>
-<hr/>
+<hr />
 <%=exception %><br/>
 <%=pageContext.getException() %><br/>
+<hr />
 <%=pc %><br/>
-<%=pageContext%><br/>
-<hr/>
+<%=pageContext %><br/>
+<hr />
 </body>
 </html>

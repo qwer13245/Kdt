@@ -14,17 +14,19 @@
 	Enumeration en = config.getInitParameterNames();
 %>
 <h1>config</h1>
-<%=config%><br/>
-<%=sc1%><br/>
-<%=sc2%><br/>
-<%=config.getServletName()%><br/>
+<%=config %><br/>
+<%=sc1 %><br/>
+<%=sc2 %><br/>
+<%=config.getServletName() %><br/>
 <%=config.getServletContext() %><br/>
+<hr />
 <%
 	while(en.hasMoreElements()){
 		out.println(en.nextElement()+"<br/>");
 	}
 %>
-<br/>
+<hr />
+
 <%=config.getInitParameter("fork")%><br/>
 <%=config.getInitParameter("xpoweredBy")%><br/>
 </body>
