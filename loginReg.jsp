@@ -1,37 +1,27 @@
-<%@page import="java.net.URLEncoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>loginReg</title>
+<title>loginReg.jsp</title>
 </head>
 <body>
-<h1>loginReg</h1>
+<h1>loginReg.jsp</h1>
 <%
+	String pid = request.getParameter("pid");
+	String pw = request.getParameter("pw");
 
-	String username = request.getParameter("username");
-	String juminbunho = request.getParameter("juminbunho");
-	String membershiptype = request.getParameter("membershiptype");
-	
-	if("minor".equals(membershiptype)){
-		response.sendRedirect("minor.jsp?name="+username+"juminbunho"+juminbunho);
-	}else if("adult".equals(membershiptype)){
-		response.sendRedirect("adult.jsp?name="+username+"juminbunho"+juminbunho);
-	}else{
-		response.sendRedirect("foreigner.jsp?name="+username+"juminbunho"+juminbunho);
+	String msg = "로그인 실패";
+	if(pid.equals("aaa") && pw.equals("1234")){
+		msg=pid+"님 로그인 성공";
+		application.setAttribute("pid", pid);
 	}
-	
-// 	String nextPage = membershiptype;
-	
-// 	if(membershiptype.equals("minor")){
-// 		nextPage = "../index";
-// 	}
-	
-// 	nextPage += ".jsp&username="+URLEncoder.encode(username,"UTF-8");
-	
-// 	response.sendRedirect(nextPage);
 %>
+<script>
+	alert("<%=msg%>")
+	location.href="loginMain.jsp"
+</script>
+
 </body>
 </html>
